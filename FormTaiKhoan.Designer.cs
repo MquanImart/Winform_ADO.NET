@@ -50,7 +50,7 @@
             this.txtshowpass = new System.Windows.Forms.TextBox();
             this.btnNaptien = new System.Windows.Forms.Button();
             this.txtNapTien = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTruTien = new System.Windows.Forms.TextBox();
             this.btnTruTien = new System.Windows.Forms.Button();
             this.pnlMoney = new System.Windows.Forms.Panel();
             this.pnlnv.SuspendLayout();
@@ -256,22 +256,21 @@
             this.btnNaptien.TabIndex = 49;
             this.btnNaptien.Text = "Nap Tien";
             this.btnNaptien.UseVisualStyleBackColor = true;
+            this.btnNaptien.Click += new System.EventHandler(this.btnNaptien_Click);
             // 
             // txtNapTien
             // 
             this.txtNapTien.Location = new System.Drawing.Point(13, 53);
             this.txtNapTien.Name = "txtNapTien";
-            this.txtNapTien.PasswordChar = '*';
             this.txtNapTien.Size = new System.Drawing.Size(94, 22);
             this.txtNapTien.TabIndex = 50;
             // 
-            // textBox1
+            // txtTruTien
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(94, 22);
-            this.textBox1.TabIndex = 52;
+            this.txtTruTien.Location = new System.Drawing.Point(13, 127);
+            this.txtTruTien.Name = "txtTruTien";
+            this.txtTruTien.Size = new System.Drawing.Size(94, 22);
+            this.txtTruTien.TabIndex = 52;
             // 
             // btnTruTien
             // 
@@ -281,11 +280,12 @@
             this.btnTruTien.TabIndex = 51;
             this.btnTruTien.Text = "Tru Tien";
             this.btnTruTien.UseVisualStyleBackColor = true;
+            this.btnTruTien.Click += new System.EventHandler(this.btnTruTien_Click);
             // 
             // pnlMoney
             // 
             this.pnlMoney.Controls.Add(this.btnNaptien);
-            this.pnlMoney.Controls.Add(this.textBox1);
+            this.pnlMoney.Controls.Add(this.txtTruTien);
             this.pnlMoney.Controls.Add(this.txtNapTien);
             this.pnlMoney.Controls.Add(this.btnTruTien);
             this.pnlMoney.Location = new System.Drawing.Point(526, 256);
@@ -346,7 +346,7 @@
         private System.Windows.Forms.TextBox txtshowpass;
         private System.Windows.Forms.Button btnNaptien;
         private System.Windows.Forms.TextBox txtNapTien;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTruTien;
         private System.Windows.Forms.Button btnTruTien;
         private System.Windows.Forms.Panel pnlMoney;
     }

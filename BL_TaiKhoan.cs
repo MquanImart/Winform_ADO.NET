@@ -45,8 +45,8 @@ namespace ADO_NET
         }
         public bool CapNhatTaiKhoan(string username, string pass, string id, int money)
         {
-            string sqlString = "Update KhachHang Set pass=N'" +
-            pass + ",id=N'" + id + ",money_account=N'" + money + "' Where username='" + username + "'";
+            string sqlString = "Update TaiKhoan Set pass=N'" +
+            pass + "',id=N'" + id + "',money_account=N'" + money + "' Where username='" + username + "'";
             return db.ChinhSuaDuLieu(sqlString);
         }
     }

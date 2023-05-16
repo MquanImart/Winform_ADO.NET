@@ -240,8 +240,9 @@
             this.btnTinhTong.Name = "btnTinhTong";
             this.btnTinhTong.Size = new System.Drawing.Size(158, 35);
             this.btnTinhTong.TabIndex = 39;
-            this.btnTinhTong.Text = "TInh Tong Khach Hang";
+            this.btnTinhTong.Text = "Tinh Tong Khach Hang";
             this.btnTinhTong.UseVisualStyleBackColor = true;
+            this.btnTinhTong.Click += new System.EventHandler(this.btnTinhTong_Click);
             // 
             // FormKhachHang
             // 

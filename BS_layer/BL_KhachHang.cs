@@ -33,7 +33,7 @@ namespace ADO_NET.BS_layer
         public bool CapNhatKhachHang(string id, string hoten, string diachi, string sdt)
         {
             string sqlString = "Update KhachHang Set hoten=N'" +
-            hoten + ",diachi=N'" + diachi + ",sdt=N'" + sdt +  "' Where id='" + id + "'";
+            hoten + "',diachi=N'" + diachi + "',sdt=N'" + sdt +  "' Where id='" + id + "'";
             return db.ChinhSuaDuLieu(sqlString);
         }
         public DataSet TimKhachHang(string id, string hoten, string diachi, string sdt)

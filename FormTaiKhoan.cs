@@ -159,5 +159,25 @@ namespace ADO_NET
             txtshowpass.Text = dgvTK.Rows[r].Cells[1].Value.ToString();
             txtshowpass.PasswordChar = '\0';
         }
+        private void ThayDoiTien(bool isadd)
+        {
+            int r = dgvTK.CurrentCell.RowIndex;
+            txtUser.Text = dgvTK.Rows[r].Cells[0].Value.ToString();
+            int money_crr = Convert.ToInt32(dgvTK.Rows[r].Cells[3].Value);
+            if (isadd) money_crr = money_crr + Convert.ToInt32(txtNapTien.Text);
+            else money_crr = money_crr - Convert.ToInt32(txtTruTien.Text);
+            bl.CapNhatTaiKhoan(txtUser.Text, dgvTK.Rows[r].Cells[1].Value.ToString(), dgvTK.Rows[r].Cells[2].Value.ToString(), money_crr);
+            LoadData();
+            txtNapTien.ResetText();
+            txtTruTien.ResetText();
+        }
+        private void btnNaptien_Click(object sender, EventArgs e)
+        {
+            ThayDoiTien(true);
+        }
+        private void btnTruTien_Click(object sender, EventArgs e)
+        {
+            ThayDoiTien(false);
+        }
     }
 }

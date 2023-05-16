@@ -167,6 +167,9 @@ namespace ADO_NET
         {
             int r = dgvKH.CurrentCell.RowIndex;
             txtID.Text = dgvKH.Rows[r].Cells[0].Value.ToString();
+            txtHoTen.Text = dgvKH.Rows[r].Cells[1].Value.ToString();
+            txtDiaChi.Text = dgvKH.Rows[r].Cells[2].Value.ToString();
+            txtSDT.Text = dgvKH.Rows[r].Cells[3].Value.ToString();
         }
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
@@ -180,6 +183,11 @@ namespace ADO_NET
             chucnang = ChucNang.TimKiem;
             changState(true);
             Reset_Txt();
+        }
+
+        private void btnTinhTong_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
