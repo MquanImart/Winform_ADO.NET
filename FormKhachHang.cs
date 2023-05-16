@@ -187,7 +187,7 @@ namespace ADO_NET
 
         private void btnTinhTong_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show((dgvKH.RowCount - 1).ToString());
         }
     }
 }
