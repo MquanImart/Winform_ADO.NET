@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace ADO_NET
 {
-    public partial class FormGiuXe : Form
+    public partial class FormLichSuHoatDong : Form
     {
         bool Them = false;
-        BL_GiuXe bl = new BL_GiuXe();
+        BL_LichSuHoatDong bl = new BL_LichSuHoatDong();
         DataTable dt;
-        public FormGiuXe()
+        public FormLichSuHoatDong()
         {
             InitializeComponent();
             dt = new DataTable();
@@ -29,8 +29,8 @@ namespace ADO_NET
             {
                 DataSet ds = bl.LayDuLieu();
                 this.dt = ds.Tables[0];
-                dgvGX.DataSource = dt;
-                dgvGX.AutoResizeColumns();
+                dgvLSHD.DataSource = dt;
+                dgvLSHD.AutoResizeColumns();
             }
             catch (SqlException)
             {
@@ -39,8 +39,8 @@ namespace ADO_NET
         }
         void Reset_Txt()
         {
-            txtBienSo.ResetText();
-            txtIDCard.ResetText();
+            txttinhtrang.ResetText();
+            txtusername.ResetText();
 
         }
         void changState(bool chinhsua)
@@ -53,7 +53,7 @@ namespace ADO_NET
         }
         void Enable_Button(bool chinhsua)
         {
-            pnlgx.Enabled = chinhsua;
+            pnllshd.Enabled = chinhsua;
             btnluu.Enabled = chinhsua;
             btnhuy.Enabled = chinhsua;
 
@@ -62,11 +62,10 @@ namespace ADO_NET
             btnxoa.Enabled = !chinhsua;
             btnthoat.Enabled = !chinhsua;
         }
-        private void FormGiuXe_Load(object sender, EventArgs e)
+        private void FormLichSuHoatDong_Load(object sender, EventArgs e)
         {
             LoadData();
         }
-
         private void btnthoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -77,18 +76,21 @@ namespace ADO_NET
             LoadData();
         }
 
+        private void btntatmay_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnthem_Click(object sender, EventArgs e)
         {
             Them = true;
             changState(true);
-
         }
 
         private void btnsua_Click(object sender, EventArgs e)
         {
             Them = false;
             Enable_Button(true);
-
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -104,9 +106,10 @@ namespace ADO_NET
             if (traloi == DialogResult.OK)
             {
                 DateTime ngay = Calendar.SelectionStart;
-                DateTime giovao = new DateTime(1, 1, 1, Convert.ToInt32(numGioVao.Value), Convert.ToInt32(numPhutVao.Value), 0);
-                string bienso = txtBienSo.Text;
-                bl.XoaLichSuGiuXe(ngay, giovao, bienso);
+                DateTime gio = new DateTime(1, 1, 1, Convert.ToInt32(numGio.Value), Convert.ToInt32(numPhut.Value), 0);
+                int somay = Convert.ToInt32(numsomay.Value);
+                string username = txtusername.Text;
+                bl.XoaLichSuHoatDong(ngay, gio, somay, username);
                 LoadData();
             }
         }
@@ -114,14 +117,13 @@ namespace ADO_NET
         private void btnluu_Click(object sender, EventArgs e)
         {
             DateTime ngay = Calendar.SelectionStart;
-            DateTime giovao = new DateTime(1, 1, 1, Convert.ToInt32(numGioVao.Value), Convert.ToInt32(numPhutVao.Value), 0);
-            DateTime giora = new DateTime(1, 1, 1, Convert.ToInt32(numGioRa.Value), Convert.ToInt32(numPhutRa.Value), 0);
-            
+            DateTime gio = new DateTime(1, 1, 1, Convert.ToInt32(numGio.Value), Convert.ToInt32(numPhut.Value), 0);
+
             if (Them == true)
             {
-                if (!txtBienSo.Text.Trim().Equals(""))
+                if (!txtusername.Text.Trim().Equals(""))
                 {
-                    bl.ThemXeVao(ngay,giovao,txtBienSo.Text, txtIDCard.Text);
+                    bl.ThemHoatDong(ngay, gio, Convert.ToInt32(numsomay.Value), txtusername.Text, txttinhtrang.Text, Convert.ToInt32(numthoigian.Value));
                     LoadData();
                     Reset_Txt();
                 }
@@ -132,9 +134,9 @@ namespace ADO_NET
             }
             else
             {
-                if (!txtBienSo.Text.Trim().Equals(""))
+                if (!txtusername.Text.Trim().Equals(""))
                 {
-                    bl.ThayDoiThongTinGiuXe(ngay, giovao, giora, txtBienSo.Text, txtIDCard.Text);
+                    bl.ThayDoiLichSuHoatDong(ngay, gio, Convert.ToInt32(numsomay.Value), txtusername.Text, txttinhtrang.Text, Convert.ToInt32(numthoigian.Value));
                     LoadData();
                     Reset_Txt();
                 }
@@ -151,28 +153,17 @@ namespace ADO_NET
             changState(false);
         }
 
-        private void dgvKH_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvLSHD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int r = dgvGX.CurrentCell.RowIndex;
-            Calendar.SelectionStart = Convert.ToDateTime(dgvGX.Rows[r].Cells[0].Value);
-            TimeSpan giovao = (TimeSpan)dgvGX.Rows[r].Cells[1].Value;
-            numGioVao.Value = giovao.Hours;
-            numPhutVao.Value = giovao.Minutes;
-
-            try
-            {
-                TimeSpan giora = (TimeSpan)dgvGX.Rows[r].Cells[2].Value;
-                numGioRa.Value = giora.Hours;
-                numPhutRa.Value = giora.Minutes;
-            }
-            catch
-            {
-                numGioRa.Value = -1;
-                numPhutRa.Value = 0;
-            } 
-            
-            txtBienSo.Text = dgvGX.Rows[r].Cells[3].Value.ToString();
-            txtIDCard.Text = dgvGX.Rows[r].Cells[4].Value.ToString();
+            int r = dgvLSHD.CurrentCell.RowIndex;
+            Calendar.SelectionStart = Convert.ToDateTime(dgvLSHD.Rows[r].Cells[0].Value);
+            TimeSpan gio = (TimeSpan)dgvLSHD.Rows[r].Cells[1].Value;
+            numGio.Value = gio.Hours;
+            numPhut.Value = gio.Minutes;
+            numsomay.Value = Convert.ToInt32(dgvLSHD.Rows[r].Cells[2].Value);
+            txtusername.Text = dgvLSHD.Rows[r].Cells[3].Value.ToString();
+            txttinhtrang.Text = dgvLSHD.Rows[r].Cells[4].Value.ToString();
+            numthoigian.Value = Convert.ToInt32(dgvLSHD.Rows[r].Cells[5].Value);
         }
     }
 }

@@ -22,8 +22,10 @@ namespace ADO_NET.BS_layer
         }
         public bool ThemXeVao(DateTime ngay, DateTime giovao, string bienso, string IDcard)
         {
+            string newstr = giovao.ToShortTimeString();
+            string giovaostr = newstr.Substring(0, newstr.Length - 3) + ":00";
             string sqlString = "Insert Into GiuXe Values(" + "'" +
-            ngay.ToShortDateString() + "',N'" + giovao.ToShortTimeString() + "',N'NULL',N'" + bienso + "',N'" + IDcard + "')";
+            ngay.ToShortDateString() + "',N'" + giovaostr + "',NULL,N'" + bienso + "',N'" + IDcard + "')";
             return db.ChinhSuaDuLieu(sqlString);
         }
         public bool XoaLichSuGiuXe(DateTime ngay, DateTime giovao, string bienso)
@@ -35,7 +37,7 @@ namespace ADO_NET.BS_layer
         public bool ThayDoiThongTinGiuXe(DateTime ngay, DateTime giovao,DateTime giora, string bienso, string IDcard)
         {
             string sqlString = "Update GiuXe Set GioRa=N'" +
-            giora+ "',IDcard=N'" + IDcard + "' Where Ngay='" + ngay + "' and GioVao = '" + giovao + "' and BienSo ='" + bienso + "'";
+            giora.ToShortTimeString()+ "',IDcard=N'" + IDcard + "' Where Ngay='" + ngay + "' and GioVao = '" + giovao + "' and BienSo ='" + bienso + "'";
             return db.ChinhSuaDuLieu(sqlString);
         }
     }
