@@ -78,7 +78,7 @@ namespace ADO_NET
 
         private void btntatmay_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("a");
+            
         }
 
         private void btnthem_Click(object sender, EventArgs e)
