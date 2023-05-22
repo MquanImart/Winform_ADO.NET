@@ -18,6 +18,7 @@ namespace ADO_NET.DB_layer
         {
             conn = new SqlConnection(ConnStr);
             comm = conn.CreateCommand();
+            
         }
         public DataSet LayDuLieu(string strSQL)
         {
