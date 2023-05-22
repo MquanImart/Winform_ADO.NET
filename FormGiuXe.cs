@@ -14,7 +14,7 @@ namespace ADO_NET
 {
     public partial class FormGiuXe : Form
     {
-        bool Them = false;
+        ChucNang chucnang = ChucNang.None;
         BL_GiuXe bl = new BL_GiuXe();
         DataTable dt;
         public FormGiuXe()
@@ -79,21 +79,23 @@ namespace ADO_NET
 
         private void btnthem_Click(object sender, EventArgs e)
         {
-            Them = true;
+            chucnang = ChucNang.Them;
             changState(true);
 
         }
 
         private void btnsua_Click(object sender, EventArgs e)
         {
-            Them = false;
+            chucnang = ChucNang.Sua;
             Enable_Button(true);
 
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-
+            chucnang = ChucNang.TimKiem;
+            changState(true);
+            Reset_Txt();
         }
 
         private void btnxoa_Click(object sender, EventArgs e)
@@ -117,7 +119,7 @@ namespace ADO_NET
             DateTime giovao = new DateTime(1, 1, 1, Convert.ToInt32(numGioVao.Value), Convert.ToInt32(numPhutVao.Value), 0);
             DateTime giora = new DateTime(1, 1, 1, Convert.ToInt32(numGioRa.Value), Convert.ToInt32(numPhutRa.Value), 0);
             
-            if (Them == true)
+            if (chucnang == ChucNang.Them)
             {
                 if (!txtBienSo.Text.Trim().Equals(""))
                 {
@@ -130,7 +132,7 @@ namespace ADO_NET
                     MessageBox.Show("Nhập Thieu Thong Tin!");
                 }
             }
-            else
+            else if (chucnang == ChucNang.Sua)
             {
                 if (!txtBienSo.Text.Trim().Equals(""))
                 {
@@ -141,6 +143,22 @@ namespace ADO_NET
                 else
                 {
                     MessageBox.Show("Nhập User name!");
+                }
+            }
+            else
+            {
+                DataSet dsimkiem = bl.TimKiemThongTin(ngay, giovao, giora, txtBienSo.Text, txtIDCard.Text);
+                try
+                {
+                    if (dsimkiem != null)
+                    {
+                        dgvGX.DataSource = dsimkiem.Tables[0];
+                        dgvGX.AutoResizeColumns();
+                    }
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Không lấy được nội dung!");
                 }
             }
         }
@@ -154,25 +172,28 @@ namespace ADO_NET
         private void dgvKH_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvGX.CurrentCell.RowIndex;
-            Calendar.SelectionStart = Convert.ToDateTime(dgvGX.Rows[r].Cells[0].Value);
-            TimeSpan giovao = (TimeSpan)dgvGX.Rows[r].Cells[1].Value;
-            numGioVao.Value = giovao.Hours;
-            numPhutVao.Value = giovao.Minutes;
+            if (r < dgvGX.Rows.Count - 1)
+            {
+                Calendar.SelectionStart = Convert.ToDateTime(dgvGX.Rows[r].Cells[0].Value);
+                TimeSpan giovao = (TimeSpan)dgvGX.Rows[r].Cells[1].Value;
+                numGioVao.Value = giovao.Hours;
+                numPhutVao.Value = giovao.Minutes;
 
-            try
-            {
-                TimeSpan giora = (TimeSpan)dgvGX.Rows[r].Cells[2].Value;
-                numGioRa.Value = giora.Hours;
-                numPhutRa.Value = giora.Minutes;
-            }
-            catch
-            {
-                numGioRa.Value = -1;
-                numPhutRa.Value = 0;
-            } 
-            
-            txtBienSo.Text = dgvGX.Rows[r].Cells[3].Value.ToString();
-            txtIDCard.Text = dgvGX.Rows[r].Cells[4].Value.ToString();
+                try
+                {
+                    TimeSpan giora = (TimeSpan)dgvGX.Rows[r].Cells[2].Value;
+                    numGioRa.Value = giora.Hours;
+                    numPhutRa.Value = giora.Minutes;
+                }
+                catch
+                {
+                    numGioRa.Value = -1;
+                    numPhutRa.Value = 0;
+                }
+
+                txtBienSo.Text = dgvGX.Rows[r].Cells[3].Value.ToString();
+                txtIDCard.Text = dgvGX.Rows[r].Cells[4].Value.ToString();
+            }      
         }
     }
 }

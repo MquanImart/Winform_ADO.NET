@@ -40,5 +40,23 @@ namespace ADO_NET.BS_layer
             giora.ToShortTimeString()+ "',IDcard=N'" + IDcard + "' Where Ngay='" + ngay + "' and GioVao = '" + giovao + "' and BienSo ='" + bienso + "'";
             return db.ChinhSuaDuLieu(sqlString);
         }
+        public DataSet TimKiemThongTin(DateTime ngay, DateTime giovao, DateTime giora, string bienso, string IDcard)
+        {
+            string sql = "select* from GiuXe where ";
+            string strngay = "ngay= '" + ngay.ToShortDateString() + "'";
+            string strgiovao = "giovao= '" + giovao.ToShortTimeString() + "'";
+            string strgiora = "giora= '" + giora.ToShortTimeString() + "'";
+            string strbienso = "bienso= '" + bienso + "'";
+            string strIDcard = "IDcard= '" + IDcard + "'";
+            MessageBox.Show(strngay);
+            MessageBox.Show(giovao.ToShortTimeString());
+            sql = sql + strngay;
+            if (giovao.ToShortTimeString() != "12:00 AM") sql = sql + " and " + strgiovao;
+            if (giora.ToShortTimeString() != "12:00 AM") sql = sql + " and " + strgiora;
+            if (bienso != "") sql = sql + " and " + strbienso;
+            if (IDcard != "") sql = sql + " and " + strIDcard;
+
+            return db.LayDuLieu(sql);
+        }
     }
 }

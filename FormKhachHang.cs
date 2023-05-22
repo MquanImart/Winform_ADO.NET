@@ -13,7 +13,7 @@ using static System.Net.WebRequestMethods;
 
 namespace ADO_NET
 {
-    enum ChucNang
+    internal enum ChucNang
     {
         None,
         Them,
@@ -100,7 +100,13 @@ namespace ADO_NET
             {
                 if (!txtID.Text.Trim().Equals(""))
                 {
-                    bl.ThemKhachHang(txtID.Text, txtHoTen.Text, txtDiaChi.Text, txtSDT.Text);
+                    if (bl.KiemTraID(txtID.Text))
+                    {
+                        MessageBox.Show("ID da ton tai!!!");
+                        Reset_Txt();
+                    }
+                    else
+                        bl.ThemKhachHang(txtID.Text, txtHoTen.Text, txtDiaChi.Text, txtSDT.Text);
                     LoadData();
                 }
                 else

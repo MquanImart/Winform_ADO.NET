@@ -19,6 +19,11 @@ namespace ADO_NET.BS_layer
         {
             return db.LayDuLieu("select * from KhachHang");
         }
+        public bool KiemTraID(string id)
+        {
+            string sqlstr = "Select * from KhachHang where id='"+id+"'";
+            return db.KiemTraDuLieu(sqlstr);
+        }
         public bool ThemKhachHang(string id, string hoten, string diachi, string sdt)
         {
             string sqlString = "Insert Into KhachHang Values(" + "'" +
