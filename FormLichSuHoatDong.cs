@@ -14,7 +14,7 @@ namespace ADO_NET
 {
     public partial class FormLichSuHoatDong : Form
     {
-        bool Them = false;
+        ChucNang chucnang = ChucNang.None;
         BL_LichSuHoatDong bl = new BL_LichSuHoatDong();
         DataTable dt;
         public FormLichSuHoatDong()
@@ -83,19 +83,22 @@ namespace ADO_NET
 
         private void btnthem_Click(object sender, EventArgs e)
         {
-            Them = true;
+            chucnang = ChucNang.Them;
             changState(true);
         }
 
         private void btnsua_Click(object sender, EventArgs e)
         {
-            Them = false;
+            chucnang = ChucNang.Sua;
             Enable_Button(true);
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-
+            chucnang = ChucNang.TimKiem;
+            changState(true);
+            cbngay.Enabled = true;
+            Reset_Txt();
         }
 
         private void btnxoa_Click(object sender, EventArgs e)
@@ -119,7 +122,7 @@ namespace ADO_NET
             DateTime ngay = Calendar.SelectionStart;
             DateTime gio = new DateTime(1, 1, 1, Convert.ToInt32(numGio.Value), Convert.ToInt32(numPhut.Value), 0);
 
-            if (Them == true)
+            if (chucnang == ChucNang.Them)
             {
                 if (!txtusername.Text.Trim().Equals(""))
                 {
@@ -132,7 +135,7 @@ namespace ADO_NET
                     MessageBox.Show("Nhập Thieu Thong Tin!");
                 }
             }
-            else
+            else if (chucnang == ChucNang.Sua)
             {
                 if (!txtusername.Text.Trim().Equals(""))
                 {
@@ -144,6 +147,25 @@ namespace ADO_NET
                 {
                     MessageBox.Show("Nhập User name!");
                 }
+            }
+            else
+            {
+                DataSet dsimkiem;
+                if (cbngay.Checked) { dsimkiem = bl.TImKiemThongTin(ngay, gio, Convert.ToInt32(numsomay.Value), txtusername.Text, txttinhtrang.Text, Convert.ToInt32(numthoigian.Value)); }
+                else dsimkiem = bl.TimKiemThongTin_NotNgay(gio, Convert.ToInt32(numsomay.Value), txtusername.Text, txttinhtrang.Text, Convert.ToInt32(numthoigian.Value));
+                try
+                {
+                    if (dsimkiem != null)
+                    {
+                        dgvLSHD.DataSource = dsimkiem.Tables[0];
+                        dgvLSHD.AutoResizeColumns();
+                    }
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Không lấy được nội dung!");
+                }
+                cbngay.Enabled = false;
             }
         }
 

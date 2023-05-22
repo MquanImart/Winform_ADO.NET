@@ -95,6 +95,7 @@ namespace ADO_NET
         {
             chucnang = ChucNang.TimKiem;
             changState(true);
+            cbngay.Enabled = true;
             Reset_Txt();
         }
 
@@ -147,7 +148,9 @@ namespace ADO_NET
             }
             else
             {
-                DataSet dsimkiem = bl.TimKiemThongTin(ngay, giovao, giora, txtBienSo.Text, txtIDCard.Text);
+                DataSet dsimkiem;
+                if (cbngay.Checked == true) { dsimkiem = bl.TimKiemThongTin(ngay, giovao, giora, txtBienSo.Text, txtIDCard.Text); }
+                else dsimkiem = bl.TimKiemThongTin_NotNgay(giovao, giora, txtBienSo.Text, txtIDCard.Text);
                 try
                 {
                     if (dsimkiem != null)
@@ -160,6 +163,7 @@ namespace ADO_NET
                 {
                     MessageBox.Show("Không lấy được nội dung!");
                 }
+                cbngay.Enabled = false;
             }
         }
 
@@ -167,6 +171,7 @@ namespace ADO_NET
         {
             Reset_Txt();
             changState(false);
+            cbngay.Enabled = false;
         }
 
         private void dgvKH_CellClick(object sender, DataGridViewCellEventArgs e)

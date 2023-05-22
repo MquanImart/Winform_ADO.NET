@@ -36,6 +36,10 @@
             this.btnreload = new System.Windows.Forms.Button();
             this.btnthoat = new System.Windows.Forms.Button();
             this.pnllshd = new System.Windows.Forms.Panel();
+            this.cbngay = new System.Windows.Forms.CheckBox();
+            this.txttinhtrang = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numsomay = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.lbsomay = new System.Windows.Forms.Label();
             this.numthoigian = new System.Windows.Forms.NumericUpDown();
@@ -49,16 +53,15 @@
             this.lbgio = new System.Windows.Forms.Label();
             this.lbuser = new System.Windows.Forms.Label();
             this.lbngay = new System.Windows.Forms.Label();
-            this.numsomay = new System.Windows.Forms.NumericUpDown();
             this.btntatmay = new System.Windows.Forms.Button();
-            this.txttinhtrang = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.pnlthuoctinh = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLSHD)).BeginInit();
             this.pnllshd.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numsomay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numthoigian)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPhut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numsomay)).BeginInit();
+            this.pnlthuoctinh.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnTimKiem
@@ -135,32 +138,67 @@
             // pnllshd
             // 
             this.pnllshd.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnllshd.Controls.Add(this.txttinhtrang);
-            this.pnllshd.Controls.Add(this.label2);
-            this.pnllshd.Controls.Add(this.numsomay);
-            this.pnllshd.Controls.Add(this.label1);
-            this.pnllshd.Controls.Add(this.lbsomay);
-            this.pnllshd.Controls.Add(this.numthoigian);
-            this.pnllshd.Controls.Add(this.numPhut);
-            this.pnllshd.Controls.Add(this.numGio);
+            this.pnllshd.Controls.Add(this.pnlthuoctinh);
+            this.pnllshd.Controls.Add(this.cbngay);
             this.pnllshd.Controls.Add(this.Calendar);
             this.pnllshd.Controls.Add(this.btnhuy);
             this.pnllshd.Controls.Add(this.btnluu);
-            this.pnllshd.Controls.Add(this.lbthoigian);
-            this.pnllshd.Controls.Add(this.txtusername);
-            this.pnllshd.Controls.Add(this.lbgio);
-            this.pnllshd.Controls.Add(this.lbuser);
             this.pnllshd.Controls.Add(this.lbngay);
             this.pnllshd.Location = new System.Drawing.Point(12, 277);
             this.pnllshd.Name = "pnllshd";
-            this.pnllshd.Size = new System.Drawing.Size(853, 233);
+            this.pnllshd.Size = new System.Drawing.Size(780, 272);
             this.pnllshd.TabIndex = 50;
+            // 
+            // cbngay
+            // 
+            this.cbngay.AutoSize = true;
+            this.cbngay.Enabled = false;
+            this.cbngay.Location = new System.Drawing.Point(73, 15);
+            this.cbngay.Name = "cbngay";
+            this.cbngay.Size = new System.Drawing.Size(93, 20);
+            this.cbngay.TabIndex = 52;
+            this.cbngay.Text = "Chọn ngày";
+            this.cbngay.UseVisualStyleBackColor = true;
+            // 
+            // txttinhtrang
+            // 
+            this.txttinhtrang.Location = new System.Drawing.Point(143, 104);
+            this.txttinhtrang.Name = "txttinhtrang";
+            this.txttinhtrang.Size = new System.Drawing.Size(122, 22);
+            this.txttinhtrang.TabIndex = 59;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(21, 144);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 20);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "Tình trạng:";
+            // 
+            // numsomay
+            // 
+            this.numsomay.Location = new System.Drawing.Point(118, 57);
+            this.numsomay.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.numsomay.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.numsomay.Name = "numsomay";
+            this.numsomay.Size = new System.Drawing.Size(49, 22);
+            this.numsomay.TabIndex = 57;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(555, 32);
+            this.label1.Location = new System.Drawing.Point(192, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 20);
             this.label1.TabIndex = 56;
@@ -170,7 +208,7 @@
             // 
             this.lbsomay.AutoSize = true;
             this.lbsomay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbsomay.Location = new System.Drawing.Point(383, 164);
+            this.lbsomay.Location = new System.Drawing.Point(21, 59);
             this.lbsomay.Name = "lbsomay";
             this.lbsomay.Size = new System.Drawing.Size(70, 20);
             this.lbsomay.TabIndex = 55;
@@ -178,7 +216,7 @@
             // 
             // numthoigian
             // 
-            this.numthoigian.Location = new System.Drawing.Point(553, 97);
+            this.numthoigian.Location = new System.Drawing.Point(216, 176);
             this.numthoigian.Maximum = new decimal(new int[] {
             23,
             0,
@@ -195,7 +233,7 @@
             // 
             // numPhut
             // 
-            this.numPhut.Location = new System.Drawing.Point(579, 30);
+            this.numPhut.Location = new System.Drawing.Point(216, 14);
             this.numPhut.Maximum = new decimal(new int[] {
             59,
             0,
@@ -207,7 +245,7 @@
             // 
             // numGio
             // 
-            this.numGio.Location = new System.Drawing.Point(505, 30);
+            this.numGio.Location = new System.Drawing.Point(143, 14);
             this.numGio.Maximum = new decimal(new int[] {
             23,
             0,
@@ -219,14 +257,14 @@
             // 
             // Calendar
             // 
-            this.Calendar.Location = new System.Drawing.Point(62, 12);
+            this.Calendar.Location = new System.Drawing.Point(9, 43);
             this.Calendar.MaxSelectionCount = 1;
             this.Calendar.Name = "Calendar";
             this.Calendar.TabIndex = 50;
             // 
             // btnhuy
             // 
-            this.btnhuy.Location = new System.Drawing.Point(693, 71);
+            this.btnhuy.Location = new System.Drawing.Point(688, 85);
             this.btnhuy.Name = "btnhuy";
             this.btnhuy.Size = new System.Drawing.Size(85, 36);
             this.btnhuy.TabIndex = 34;
@@ -236,7 +274,7 @@
             // 
             // btnluu
             // 
-            this.btnluu.Location = new System.Drawing.Point(693, 13);
+            this.btnluu.Location = new System.Drawing.Point(688, 43);
             this.btnluu.Name = "btnluu";
             this.btnluu.Size = new System.Drawing.Size(85, 36);
             this.btnluu.TabIndex = 35;
@@ -248,7 +286,7 @@
             // 
             this.lbthoigian.AutoSize = true;
             this.lbthoigian.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbthoigian.Location = new System.Drawing.Point(375, 99);
+            this.lbthoigian.Location = new System.Drawing.Point(21, 176);
             this.lbthoigian.Name = "lbthoigian";
             this.lbthoigian.Size = new System.Drawing.Size(146, 20);
             this.lbthoigian.TabIndex = 11;
@@ -256,7 +294,7 @@
             // 
             // txtusername
             // 
-            this.txtusername.Location = new System.Drawing.Point(724, 177);
+            this.txtusername.Location = new System.Drawing.Point(143, 142);
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(122, 22);
             this.txtusername.TabIndex = 10;
@@ -265,7 +303,7 @@
             // 
             this.lbgio.AutoSize = true;
             this.lbgio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbgio.Location = new System.Drawing.Point(375, 29);
+            this.lbgio.Location = new System.Drawing.Point(21, 16);
             this.lbgio.Name = "lbgio";
             this.lbgio.Size = new System.Drawing.Size(106, 20);
             this.lbgio.TabIndex = 7;
@@ -275,7 +313,7 @@
             // 
             this.lbuser.AutoSize = true;
             this.lbuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbuser.Location = new System.Drawing.Point(619, 177);
+            this.lbuser.Location = new System.Drawing.Point(21, 106);
             this.lbuser.Name = "lbuser";
             this.lbuser.Size = new System.Drawing.Size(99, 20);
             this.lbuser.TabIndex = 4;
@@ -291,23 +329,6 @@
             this.lbngay.TabIndex = 0;
             this.lbngay.Text = "Ngày:";
             // 
-            // numsomay
-            // 
-            this.numsomay.Location = new System.Drawing.Point(463, 162);
-            this.numsomay.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.numsomay.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
-            this.numsomay.Name = "numsomay";
-            this.numsomay.Size = new System.Drawing.Size(49, 22);
-            this.numsomay.TabIndex = 57;
-            // 
             // btntatmay
             // 
             this.btntatmay.Location = new System.Drawing.Point(798, 84);
@@ -318,28 +339,31 @@
             this.btntatmay.UseVisualStyleBackColor = true;
             this.btntatmay.Click += new System.EventHandler(this.btntatmay_Click);
             // 
-            // txttinhtrang
+            // pnlthuoctinh
             // 
-            this.txttinhtrang.Location = new System.Drawing.Point(724, 129);
-            this.txttinhtrang.Name = "txttinhtrang";
-            this.txttinhtrang.Size = new System.Drawing.Size(122, 22);
-            this.txttinhtrang.TabIndex = 59;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(619, 129);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 20);
-            this.label2.TabIndex = 58;
-            this.label2.Text = "Tình trạng:";
+            this.pnlthuoctinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnlthuoctinh.Controls.Add(this.lbgio);
+            this.pnlthuoctinh.Controls.Add(this.numGio);
+            this.pnlthuoctinh.Controls.Add(this.numthoigian);
+            this.pnlthuoctinh.Controls.Add(this.lbthoigian);
+            this.pnlthuoctinh.Controls.Add(this.txttinhtrang);
+            this.pnlthuoctinh.Controls.Add(this.label1);
+            this.pnlthuoctinh.Controls.Add(this.label2);
+            this.pnlthuoctinh.Controls.Add(this.numPhut);
+            this.pnlthuoctinh.Controls.Add(this.lbsomay);
+            this.pnlthuoctinh.Controls.Add(this.txtusername);
+            this.pnlthuoctinh.Controls.Add(this.numsomay);
+            this.pnlthuoctinh.Controls.Add(this.lbuser);
+            this.pnlthuoctinh.Location = new System.Drawing.Point(329, 43);
+            this.pnlthuoctinh.Name = "pnlthuoctinh";
+            this.pnlthuoctinh.Size = new System.Drawing.Size(288, 207);
+            this.pnlthuoctinh.TabIndex = 52;
             // 
             // FormLichSuHoatDong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 520);
+            this.ClientSize = new System.Drawing.Size(878, 558);
             this.Controls.Add(this.btntatmay);
             this.Controls.Add(this.pnllshd);
             this.Controls.Add(this.btnTimKiem);
@@ -355,10 +379,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLSHD)).EndInit();
             this.pnllshd.ResumeLayout(false);
             this.pnllshd.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numsomay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numthoigian)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPhut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numsomay)).EndInit();
+            this.pnlthuoctinh.ResumeLayout(false);
+            this.pnlthuoctinh.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -389,5 +415,7 @@
         private System.Windows.Forms.Button btntatmay;
         private System.Windows.Forms.TextBox txttinhtrang;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox cbngay;
+        private System.Windows.Forms.Panel pnlthuoctinh;
     }
 }

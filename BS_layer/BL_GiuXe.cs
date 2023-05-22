@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -48,13 +49,33 @@ namespace ADO_NET.BS_layer
             string strgiora = "giora= '" + giora.ToShortTimeString() + "'";
             string strbienso = "bienso= '" + bienso + "'";
             string strIDcard = "IDcard= '" + IDcard + "'";
-            MessageBox.Show(strngay);
-            MessageBox.Show(giovao.ToShortTimeString());
+
             sql = sql + strngay;
             if (giovao.ToShortTimeString() != "12:00 AM") sql = sql + " and " + strgiovao;
             if (giora.ToShortTimeString() != "12:00 AM") sql = sql + " and " + strgiora;
             if (bienso != "") sql = sql + " and " + strbienso;
             if (IDcard != "") sql = sql + " and " + strIDcard;
+
+            return db.LayDuLieu(sql);
+        }
+        public DataSet TimKiemThongTin_NotNgay(DateTime giovao, DateTime giora, string bienso, string IDcard)
+        {
+            string sql = "select* from GiuXe where ";
+            string where = "none";
+            string strgiovao = "giovao= '" + giovao.ToShortTimeString() + "'";
+            string strgiora = "giora= '" + giora.ToShortTimeString() + "'";
+            string strbienso = "bienso= '" + bienso + "'";
+            string strIDcard = "IDcard= '" + IDcard + "'";
+
+            if (giovao.ToShortTimeString() != "12:00 AM") { sql = sql + strgiovao; where = "giovao"; }
+            else if (giora.ToShortTimeString() != "12:00 AM") { sql = sql + strgiora; where = "giora"; }
+            else if (bienso != "") { sql = sql + strbienso; where = "bienso"; }
+            else if (IDcard != "") { sql = sql + strIDcard; where = "IDcard"; }
+
+            if (giovao.ToShortTimeString() != "12:00 AM" && where != "giovao") sql = sql + " and " + strgiovao;
+            if (giora.ToShortTimeString() != "12:00 AM" && where != "giora") sql = sql + " and " + strgiora;
+            if (bienso != "" && where != "bienso") sql = sql + " and " + strbienso;
+            if (IDcard != "" && where != "IDcard") sql = sql + " and " + strIDcard;
 
             return db.LayDuLieu(sql);
         }

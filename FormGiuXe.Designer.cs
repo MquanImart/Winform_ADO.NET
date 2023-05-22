@@ -52,6 +52,7 @@
             this.txtBienSo = new System.Windows.Forms.TextBox();
             this.lbidcard = new System.Windows.Forms.Label();
             this.lbngay = new System.Windows.Forms.Label();
+            this.cbngay = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGX)).BeginInit();
             this.pnlgx.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPhutRa)).BeginInit();
@@ -62,7 +63,7 @@
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(798, 404);
+            this.btnTimKiem.Location = new System.Drawing.Point(798, 443);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(85, 36);
             this.btnTimKiem.TabIndex = 48;
@@ -83,7 +84,7 @@
             // 
             // btnxoa
             // 
-            this.btnxoa.Location = new System.Drawing.Point(798, 469);
+            this.btnxoa.Location = new System.Drawing.Point(798, 286);
             this.btnxoa.Name = "btnxoa";
             this.btnxoa.Size = new System.Drawing.Size(85, 36);
             this.btnxoa.TabIndex = 45;
@@ -93,7 +94,7 @@
             // 
             // btnthem
             // 
-            this.btnthem.Location = new System.Drawing.Point(798, 272);
+            this.btnthem.Location = new System.Drawing.Point(798, 328);
             this.btnthem.Name = "btnthem";
             this.btnthem.Size = new System.Drawing.Size(85, 36);
             this.btnthem.TabIndex = 44;
@@ -103,7 +104,7 @@
             // 
             // btnsua
             // 
-            this.btnsua.Location = new System.Drawing.Point(798, 337);
+            this.btnsua.Location = new System.Drawing.Point(798, 370);
             this.btnsua.Name = "btnsua";
             this.btnsua.Size = new System.Drawing.Size(85, 36);
             this.btnsua.TabIndex = 43;
@@ -319,11 +320,23 @@
             this.lbngay.TabIndex = 0;
             this.lbngay.Text = "Ngày:";
             // 
+            // cbngay
+            // 
+            this.cbngay.AutoSize = true;
+            this.cbngay.Enabled = false;
+            this.cbngay.Location = new System.Drawing.Point(798, 485);
+            this.cbngay.Name = "cbngay";
+            this.cbngay.Size = new System.Drawing.Size(93, 20);
+            this.cbngay.TabIndex = 58;
+            this.cbngay.Text = "Chọn ngày";
+            this.cbngay.UseVisualStyleBackColor = true;
+            // 
             // FormGiuXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 519);
+            this.Controls.Add(this.cbngay);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.dgvGX);
             this.Controls.Add(this.btnxoa);
@@ -343,6 +356,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numPhutVao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGioVao)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -371,5 +385,6 @@
         private System.Windows.Forms.Label lbngay;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox cbngay;
     }
 }
