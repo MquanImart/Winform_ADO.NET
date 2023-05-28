@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ADO_NET.BS_layer
 {
@@ -62,7 +63,7 @@ namespace ADO_NET.BS_layer
             string where = "none";
             string strgio = "gio= '" + gio.ToShortTimeString() + "'";
             string strsomay = "somay= '" + somay.ToString() + "'";
-            string struser = "bienso= " + username;
+            string struser = "username= '" + username +"'";
             string strtinhtrang = "tinhtrang= '" + tinhtrang + "'";
             string strthoigian = "thoigian= " + thoigian.ToString();
 
@@ -74,7 +75,7 @@ namespace ADO_NET.BS_layer
 
             if (gio.ToShortTimeString() != "12:00 AM" && where != "gio") sql = sql + " and " + strgio;
             if (somay != 0 && where != "somay") sql = sql + " and " + strsomay;
-            if (username != "" && where != "bienso") sql = sql + " and " + struser;
+            if (username != "" && where != "user") sql = sql + " and " + struser;
             if (tinhtrang != "" && where != "tinhtrang") sql = sql + " and " + strtinhtrang;
             if (thoigian != 0 && where != "thoigian") sql = sql + " and " + strthoigian;
 

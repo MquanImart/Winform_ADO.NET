@@ -146,6 +146,10 @@ namespace ADO_NET
         {
             int r = dgvTK.CurrentCell.RowIndex;
             txtUser.Text = dgvTK.Rows[r].Cells[0].Value.ToString();
+            txtPass.Text = dgvTK.Rows[r].Cells[1].Value.ToString();
+            txtID.Text = dgvTK.Rows[r].Cells[2].Value.ToString();
+            txtMoney.Text = dgvTK.Rows[r].Cells[3].Value.ToString();
+            txtshowpass.ResetText();
         }
 
         private void btnshowpass_Click(object sender, EventArgs e)
@@ -164,12 +168,19 @@ namespace ADO_NET
             int r = dgvTK.CurrentCell.RowIndex;
             txtUser.Text = dgvTK.Rows[r].Cells[0].Value.ToString();
             int money_crr = Convert.ToInt32(dgvTK.Rows[r].Cells[3].Value);
-            if (isadd) money_crr = money_crr + Convert.ToInt32(txtNapTien.Text);
-            else money_crr = money_crr - Convert.ToInt32(txtTruTien.Text);
+            if (isadd) money_crr = money_crr + Convert.ToInt32(numNap.Value);
+            else if (money_crr - Convert.ToInt32(numTru.Value) >= 0) money_crr = money_crr - Convert.ToInt32(numTru.Value);
+            else
+            {
+                numNap.Value = 0;
+                numTru.Value = 0;
+                MessageBox.Show("So du khong du!!!");
+                return;
+            }
             bl.CapNhatTaiKhoan(txtUser.Text, dgvTK.Rows[r].Cells[1].Value.ToString(), dgvTK.Rows[r].Cells[2].Value.ToString(), money_crr);
             LoadData();
-            txtNapTien.ResetText();
-            txtTruTien.ResetText();
+            numNap.Value = 0;
+            numTru.Value = 0;
         }
         private void btnNaptien_Click(object sender, EventArgs e)
         {

@@ -57,6 +57,7 @@ namespace ADO_NET
             btnluu.Enabled = chinhsua;
             btnhuy.Enabled = chinhsua;
 
+            btnXeRa.Enabled = !chinhsua;
             btnthem.Enabled = !chinhsua;
             btnsua.Enabled = !chinhsua;
             btnxoa.Enabled = !chinhsua;
@@ -81,9 +82,23 @@ namespace ADO_NET
         {
             chucnang = ChucNang.Them;
             changState(true);
+            numGioRa.Enabled = false;
+            numPhutRa.Enabled = false;
 
         }
-
+        private void btnXeRa_Click(object sender, EventArgs e)
+        {
+            chucnang = ChucNang.Sua;
+            Enable_Button(true);
+            pnlgx.Enabled = true;
+            numGioRa.Enabled = true;
+            numPhutRa.Enabled = true;
+            Calendar.Enabled = false;
+            numGioVao.Enabled = false;
+            numPhutVao.Enabled = false;
+            txtBienSo.Enabled = false;
+            txtIDCard.Enabled = false;
+        }
         private void btnsua_Click(object sender, EventArgs e)
         {
             chucnang = ChucNang.Sua;
@@ -199,6 +214,11 @@ namespace ADO_NET
                 txtBienSo.Text = dgvGX.Rows[r].Cells[3].Value.ToString();
                 txtIDCard.Text = dgvGX.Rows[r].Cells[4].Value.ToString();
             }      
+        }
+
+        private void btnTinhTong_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show((dgvGX.RowCount - 1).ToString());
         }
     }
 }
