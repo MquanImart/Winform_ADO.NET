@@ -46,16 +46,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BS_layer\BL_AmThuc.cs" />
     <Compile Include="BS_layer\BL_GiuXe.cs" />
+    <Compile Include="BS_layer\BL_HangHoa.cs" />
+    <Compile Include="BS_layer\BL_HoaDon.cs" />
     <Compile Include="BS_layer\BL_LichSuHoatDong.cs" />
     <Compile Include="BS_layer\BL_TaiKhoan.cs" />
     <Compile Include="BS_layer\BL_KhachHang.cs" />
     <Compile Include="DB_layer\DB_DataBase.cs" />
+    <Compile Include="FormAmThuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAmThuc.Designer.cs">
+      <DependentUpon>FormAmThuc.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGiuXe.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormGiuXe.Designer.cs">
       <DependentUpon>FormGiuXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHangHoa.Designer.cs">
+      <DependentUpon>FormHangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHoaDon.Designer.cs">
+      <DependentUpon>FormHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="FormKhachHang.cs">
       <SubType>Form</SubType>
@@ -77,8 +98,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAmThuc.resx">
+      <DependentUpon>FormAmThuc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGiuXe.resx">
       <DependentUpon>FormGiuXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHangHoa.resx">
+      <DependentUpon>FormHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHoaDon.resx">
+      <DependentUpon>FormHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormKhachHang.resx">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
