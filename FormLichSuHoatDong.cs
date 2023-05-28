@@ -173,6 +173,7 @@ namespace ADO_NET
         {
             Reset_Txt();
             changState(false);
+
         }
 
         private void dgvLSHD_CellClick(object sender, DataGridViewCellEventArgs e)
