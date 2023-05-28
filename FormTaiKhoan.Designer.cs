@@ -49,13 +49,15 @@
             this.btnshowpassw = new System.Windows.Forms.Button();
             this.txtshowpass = new System.Windows.Forms.TextBox();
             this.btnNaptien = new System.Windows.Forms.Button();
-            this.txtNapTien = new System.Windows.Forms.TextBox();
-            this.txtTruTien = new System.Windows.Forms.TextBox();
             this.btnTruTien = new System.Windows.Forms.Button();
             this.pnlMoney = new System.Windows.Forms.Panel();
+            this.numNap = new System.Windows.Forms.NumericUpDown();
+            this.numTru = new System.Windows.Forms.NumericUpDown();
             this.pnlnv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTK)).BeginInit();
             this.pnlMoney.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numNap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTru)).BeginInit();
             this.SuspendLayout();
             // 
             // btnluu
@@ -250,7 +252,7 @@
             // 
             // btnNaptien
             // 
-            this.btnNaptien.Location = new System.Drawing.Point(13, 12);
+            this.btnNaptien.Location = new System.Drawing.Point(13, 9);
             this.btnNaptien.Name = "btnNaptien";
             this.btnNaptien.Size = new System.Drawing.Size(94, 35);
             this.btnNaptien.TabIndex = 49;
@@ -258,23 +260,9 @@
             this.btnNaptien.UseVisualStyleBackColor = true;
             this.btnNaptien.Click += new System.EventHandler(this.btnNaptien_Click);
             // 
-            // txtNapTien
-            // 
-            this.txtNapTien.Location = new System.Drawing.Point(13, 53);
-            this.txtNapTien.Name = "txtNapTien";
-            this.txtNapTien.Size = new System.Drawing.Size(94, 22);
-            this.txtNapTien.TabIndex = 50;
-            // 
-            // txtTruTien
-            // 
-            this.txtTruTien.Location = new System.Drawing.Point(13, 127);
-            this.txtTruTien.Name = "txtTruTien";
-            this.txtTruTien.Size = new System.Drawing.Size(94, 22);
-            this.txtTruTien.TabIndex = 52;
-            // 
             // btnTruTien
             // 
-            this.btnTruTien.Location = new System.Drawing.Point(13, 86);
+            this.btnTruTien.Location = new System.Drawing.Point(13, 128);
             this.btnTruTien.Name = "btnTruTien";
             this.btnTruTien.Size = new System.Drawing.Size(94, 35);
             this.btnTruTien.TabIndex = 51;
@@ -284,14 +272,48 @@
             // 
             // pnlMoney
             // 
+            this.pnlMoney.Controls.Add(this.numTru);
             this.pnlMoney.Controls.Add(this.btnNaptien);
-            this.pnlMoney.Controls.Add(this.txtTruTien);
-            this.pnlMoney.Controls.Add(this.txtNapTien);
+            this.pnlMoney.Controls.Add(this.numNap);
             this.pnlMoney.Controls.Add(this.btnTruTien);
-            this.pnlMoney.Location = new System.Drawing.Point(526, 256);
+            this.pnlMoney.Location = new System.Drawing.Point(526, 202);
             this.pnlMoney.Name = "pnlMoney";
-            this.pnlMoney.Size = new System.Drawing.Size(122, 159);
+            this.pnlMoney.Size = new System.Drawing.Size(122, 213);
             this.pnlMoney.TabIndex = 53;
+            // 
+            // numNap
+            // 
+            this.numNap.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numNap.Location = new System.Drawing.Point(13, 50);
+            this.numNap.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numNap.Name = "numNap";
+            this.numNap.Size = new System.Drawing.Size(94, 22);
+            this.numNap.TabIndex = 54;
+            // 
+            // numTru
+            // 
+            this.numTru.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numTru.Location = new System.Drawing.Point(13, 169);
+            this.numTru.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numTru.Name = "numTru";
+            this.numTru.Size = new System.Drawing.Size(94, 22);
+            this.numTru.TabIndex = 55;
             // 
             // FormTaiKhoan
             // 
@@ -317,7 +339,8 @@
             this.pnlnv.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTK)).EndInit();
             this.pnlMoney.ResumeLayout(false);
-            this.pnlMoney.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numNap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTru)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,9 +368,9 @@
         private System.Windows.Forms.Button btnshowpassw;
         private System.Windows.Forms.TextBox txtshowpass;
         private System.Windows.Forms.Button btnNaptien;
-        private System.Windows.Forms.TextBox txtNapTien;
-        private System.Windows.Forms.TextBox txtTruTien;
         private System.Windows.Forms.Button btnTruTien;
         private System.Windows.Forms.Panel pnlMoney;
+        private System.Windows.Forms.NumericUpDown numTru;
+        private System.Windows.Forms.NumericUpDown numNap;
     }
 }

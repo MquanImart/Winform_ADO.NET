@@ -17,6 +17,7 @@ namespace ADO_NET
         ChucNang chucnang = ChucNang.None;
         BL_LichSuHoatDong bl = new BL_LichSuHoatDong();
         DataTable dt;
+        bool ClickCell = true;
         public FormLichSuHoatDong()
         {
             InitializeComponent();
@@ -78,7 +79,16 @@ namespace ADO_NET
 
         private void btntatmay_Click(object sender, EventArgs e)
         {
-            
+            chucnang = ChucNang.Sua;
+            Enable_Button(true);
+            Calendar.Enabled = false;
+            numGio.Enabled = false;
+            numPhut.Enabled = false;
+            txttinhtrang.Enabled = false;
+            txtusername.Enabled = false;
+            numsomay.Enabled = false;
+            numthoigian.Enabled = true;
+            txttinhtrang.Text = "da su dung";
         }
 
         private void btnthem_Click(object sender, EventArgs e)
@@ -99,6 +109,11 @@ namespace ADO_NET
             changState(true);
             cbngay.Enabled = true;
             Reset_Txt();
+            numGio.Value = 0;
+            numPhut.Value = 0;
+            numsomay.Value = 0;
+            numthoigian.Value = 0;
+            ClickCell = false;
         }
 
         private void btnxoa_Click(object sender, EventArgs e)
@@ -166,6 +181,7 @@ namespace ADO_NET
                     MessageBox.Show("Không lấy được nội dung!");
                 }
                 cbngay.Enabled = false;
+                ClickCell = true;
             }
         }
 
@@ -173,19 +189,39 @@ namespace ADO_NET
         {
             Reset_Txt();
             changState(false);
+            ClickCell = true;
+            cbngay.Enabled = false;
         }
 
         private void dgvLSHD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int r = dgvLSHD.CurrentCell.RowIndex;
-            Calendar.SelectionStart = Convert.ToDateTime(dgvLSHD.Rows[r].Cells[0].Value);
-            TimeSpan gio = (TimeSpan)dgvLSHD.Rows[r].Cells[1].Value;
-            numGio.Value = gio.Hours;
-            numPhut.Value = gio.Minutes;
-            numsomay.Value = Convert.ToInt32(dgvLSHD.Rows[r].Cells[2].Value);
-            txtusername.Text = dgvLSHD.Rows[r].Cells[3].Value.ToString();
-            txttinhtrang.Text = dgvLSHD.Rows[r].Cells[4].Value.ToString();
-            numthoigian.Value = Convert.ToInt32(dgvLSHD.Rows[r].Cells[5].Value);
+            if (ClickCell == true)
+            {
+                int r = dgvLSHD.CurrentCell.RowIndex;
+                Calendar.SelectionStart = Convert.ToDateTime(dgvLSHD.Rows[r].Cells[0].Value);
+                TimeSpan gio = (TimeSpan)dgvLSHD.Rows[r].Cells[1].Value;
+                numGio.Value = gio.Hours;
+                numPhut.Value = gio.Minutes;
+                numsomay.Value = Convert.ToInt32(dgvLSHD.Rows[r].Cells[2].Value);
+                txtusername.Text = dgvLSHD.Rows[r].Cells[3].Value.ToString();
+                txttinhtrang.Text = dgvLSHD.Rows[r].Cells[4].Value.ToString();
+                numthoigian.Value = Convert.ToInt32(dgvLSHD.Rows[r].Cells[5].Value);
+            }
+        }
+
+        private void btnTinhTong_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show((dgvLSHD.RowCount - 1).ToString());
+        }
+
+        private void btnTinhThoiGian_Click(object sender, EventArgs e)
+        {
+            int tong = 0;
+            for (int i = 0; i < dgvLSHD.Rows.Count - 1; i++)
+            {
+                tong = tong + Convert.ToInt32(dgvLSHD.Rows[i].Cells[5].Value);
+            }
+            MessageBox.Show("Tong thoi gian su dung la: " + tong.ToString());
         }
     }
 }
