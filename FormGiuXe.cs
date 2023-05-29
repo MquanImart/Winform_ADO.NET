@@ -207,7 +207,7 @@ namespace ADO_NET
                 }
                 catch
                 {
-                    numGioRa.Value = -1;
+                    numGioRa.Value = 0;
                     numPhutRa.Value = 0;
                 }
 
