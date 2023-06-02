@@ -58,8 +58,8 @@ namespace ADO_NET.BS_layer
             else return null;
 
             if (hoten != "" && start != "hoten") where += " and " + strhoten;
-            else if (diachi != "" && start != "diachi") where += " and " + strdiachi;
-            else if (sdt != "" && start != "sdt") where += " and " + strsdt;
+            if (diachi != "" && start != "diachi") where += " and " + strdiachi;
+            if (sdt != "" && start != "sdt") where += " and " + strsdt;
 
             strSQL = strSQL + where;
             return db.LayDuLieu(strSQL);

@@ -16,7 +16,7 @@ namespace ADO_NET
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLichSuHoatDong());
+            Application.Run(new FormMain());
         }
     }
 }
