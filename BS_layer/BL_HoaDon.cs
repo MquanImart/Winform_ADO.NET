@@ -63,10 +63,10 @@ namespace ADO_NET.BS_layer
             else return null;
 
             if (Ngay.ToShortDateString() != null && start != " Ngay ") where += " and " + strn;
-            else if (strTime != null && start != " Gio ") where += " and " + strg;
-            else if (DanhMuc != "" && start != " DanhMuc ") where += " and " + strdm;
-            else if (Loai != "" && start != " Loai ") where += " and " + strl;
-            else if (Sotien != "" && start != " Sotien ") where += " and " + strs;
+            if (strTime != null && start != " Gio ") where += " and " + strg;
+            if (DanhMuc != "" && start != " DanhMuc ") where += " and " + strdm;
+            if (Loai != "" && start != " Loai ") where += " and " + strl;
+            if (Sotien != "" && start != " Sotien ") where += " and " + strs;
 
             strSQL += where;
             return db.LayDuLieu(strSQL);

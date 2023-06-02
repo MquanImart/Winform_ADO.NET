@@ -56,9 +56,9 @@ namespace ADO_NET.BS_layer
             else return null;
 
             if (Loai != "" && start != " Loai ") where += " and " + strl;
-            else if (Ten != "" && start != " Ten ") where += " and " + strt;
-            else if (SL != "" && start != " SL ") where += " and " + strsl;
-            else if (Gia != "" && start != " Gia ") where += " and " + strg;
+            if (Ten != "" && start != " Ten ") where += " and " + strt;
+            if (SL != "" && start != " SL ") where += " and " + strsl;
+            if (Gia != "" && start != " Gia ") where += " and " + strg;
 
             strSQL += where + " order by " + start;
             return db.LayDuLieu(strSQL);

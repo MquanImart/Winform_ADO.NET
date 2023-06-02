@@ -46,11 +46,11 @@ namespace ADO_NET
             btnHuy.Enabled = chinhsua;
             btnLuu.Enabled = chinhsua;
 
-            //btnThem.Enabled = !chinhsua;
-            //btnXoa.Enabled = !chinhsua;
-            //btnSua.Enabled = !chinhsua;
-            //btnThoat.Enabled = !chinhsua;
-            //btnTimKiem.Enabled = !chinhsua;
+            btnThem.Enabled = !chinhsua;
+            btnXoa.Enabled = !chinhsua;
+            btnSua.Enabled = !chinhsua;
+            btnThoat.Enabled = !chinhsua;
+            btnTimKiem.Enabled = !chinhsua;
         }
         void LoadData()
         {
@@ -200,7 +200,7 @@ namespace ADO_NET
             luaChon = LuaChon.Sua;
             changeState(true);
             txtID.Enabled = false;
-            txtTen.Enabled = false;
+            txtTen.Enabled = true;
             txtGia.Enabled = true;
             txtSL.Enabled = true;
 
