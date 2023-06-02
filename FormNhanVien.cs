@@ -16,6 +16,7 @@ namespace ADO_NET
     {
         ChucNang chucnang = ChucNang.None;
         BL_NhanVien bl = new BL_NhanVien();
+        bool click_cell = true;
         public FormNhanVien()
         {
             InitializeComponent();
@@ -75,6 +76,7 @@ namespace ADO_NET
         {
             Reset_Txt();
             LoadData();
+            click_cell = true;
         }
 
         private void btnxoa_Click(object sender, EventArgs e)
@@ -94,6 +96,7 @@ namespace ADO_NET
             chucnang = ChucNang.TimKiem;
             changState(true);
             Reset_Txt();
+            click_cell = false;
         }
 
         private void btnsua_Click(object sender, EventArgs e)
@@ -112,6 +115,7 @@ namespace ADO_NET
 
             changState(true);
             txtID.Focus();
+            click_cell = false;
         }
 
         private void btnluu_Click(object sender, EventArgs e)
@@ -173,20 +177,24 @@ namespace ADO_NET
         {
             Reset_Txt();
             changState(false);
+            click_cell = true;
         }
 
         private void dgvNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvNV.CurrentCell.RowIndex;
-            txtID.Text = dgvNV.Rows[r].Cells[0].Value.ToString();
-            txtHoTen.Text = dgvNV.Rows[r].Cells[1].Value.ToString();
-            dtpngaysinh.Value = Convert.ToDateTime(dgvNV.Rows[r].Cells[2].Value);
-            txtcccd.Text = dgvNV.Rows[r].Cells[3].Value.ToString();
-            txtDiaChi.Text = dgvNV.Rows[r].Cells[4].Value.ToString();
-            cbnam.CheckState = dgvNV.Rows[r].Cells[5].Value.ToString().Contains("nam")? CheckState.Checked : CheckState.Unchecked;
-            txtSDT.Text = dgvNV.Rows[r].Cells[6].Value.ToString();
-            txtchucvu.Text = dgvNV.Rows[r].Cells[7].Value.ToString();
-            numLuong.Value = Convert.ToInt32(dgvNV.Rows[r].Cells[8].Value);
+            if (r < dgvNV.RowCount - 1 && click_cell)
+            {
+                txtID.Text = dgvNV.Rows[r].Cells[0].Value.ToString();
+                txtHoTen.Text = dgvNV.Rows[r].Cells[1].Value.ToString();
+                dtpngaysinh.Value = Convert.ToDateTime(dgvNV.Rows[r].Cells[2].Value);
+                txtcccd.Text = dgvNV.Rows[r].Cells[3].Value.ToString();
+                txtDiaChi.Text = dgvNV.Rows[r].Cells[4].Value.ToString();
+                cbnam.CheckState = dgvNV.Rows[r].Cells[5].Value.ToString().Contains("nam") ? CheckState.Checked : CheckState.Unchecked;
+                txtSDT.Text = dgvNV.Rows[r].Cells[6].Value.ToString();
+                txtchucvu.Text = dgvNV.Rows[r].Cells[7].Value.ToString();
+                numLuong.Value = Convert.ToInt32(dgvNV.Rows[r].Cells[8].Value);
+            }
 
         }
 

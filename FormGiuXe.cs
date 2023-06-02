@@ -17,6 +17,7 @@ namespace ADO_NET
         ChucNang chucnang = ChucNang.None;
         BL_GiuXe bl = new BL_GiuXe();
         DataTable dt;
+        bool click_cell = true;
         public FormGiuXe()
         {
             InitializeComponent();
@@ -76,6 +77,7 @@ namespace ADO_NET
         private void btnreload_Click(object sender, EventArgs e)
         {
             LoadData();
+            click_cell = true;
         }
 
         private void btnthem_Click(object sender, EventArgs e)
@@ -84,7 +86,7 @@ namespace ADO_NET
             changState(true);
             numGioRa.Enabled = false;
             numPhutRa.Enabled = false;
-
+            click_cell = false;
         }
         private void btnXeRa_Click(object sender, EventArgs e)
         {
@@ -112,6 +114,14 @@ namespace ADO_NET
             changState(true);
             cbngay.Enabled = true;
             Reset_Txt();
+            numPhutRa.Enabled = true;
+            Calendar.Enabled = true;
+            numGioVao.Enabled = true;
+            numPhutVao.Enabled = true;
+            txtBienSo.Enabled = true;
+            txtIDCard.Enabled = true;
+            click_cell = false;
+
         }
 
         private void btnxoa_Click(object sender, EventArgs e)
@@ -192,7 +202,7 @@ namespace ADO_NET
         private void dgvKH_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvGX.CurrentCell.RowIndex;
-            if (r < dgvGX.Rows.Count - 1)
+            if (r < dgvGX.Rows.Count - 1 && click_cell)
             {
                 Calendar.SelectionStart = Convert.ToDateTime(dgvGX.Rows[r].Cells[0].Value);
                 TimeSpan giovao = (TimeSpan)dgvGX.Rows[r].Cells[1].Value;

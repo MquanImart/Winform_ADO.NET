@@ -17,6 +17,7 @@ namespace ADO_NET
     {
         LuaChon luaChon = LuaChon.None;
         BL_HangHoa blHangHoa = new BL_HangHoa();
+        bool click_cell = true;
         public FormHangHoa()
         {
             InitializeComponent();
@@ -41,7 +42,6 @@ namespace ADO_NET
 
             btnHuy.Enabled = true;
             btnLuu.Enabled = true;
-            pnlHangHoa.Enabled = true;
         }
         void LoadData()
         {
@@ -66,12 +66,16 @@ namespace ADO_NET
         private void dgvHangHoa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvHangHoa.CurrentCell.RowIndex;
-            if (r < 0 || r >= dgvHangHoa.RowCount) return;
-            txtID.Text = dgvHangHoa.Rows[r].Cells[0].Value.ToString();
-            txtLoai.Text = dgvHangHoa.Rows[r].Cells[1].Value.ToString();
-            txtTen.Text = dgvHangHoa.Rows[r].Cells[2].Value.ToString();
-            txtSL.Text = dgvHangHoa.Rows[r].Cells[3].Value.ToString();
-            txtGia.Text = dgvHangHoa.Rows[r].Cells[4].Value.ToString();
+            if (click_cell)
+            {
+                if (r < 0 || r >= dgvHangHoa.RowCount) return;
+                txtID.Text = dgvHangHoa.Rows[r].Cells[0].Value.ToString();
+                txtLoai.Text = dgvHangHoa.Rows[r].Cells[1].Value.ToString();
+                txtTen.Text = dgvHangHoa.Rows[r].Cells[2].Value.ToString();
+                txtSL.Text = dgvHangHoa.Rows[r].Cells[3].Value.ToString();
+                txtGia.Text = dgvHangHoa.Rows[r].Cells[4].Value.ToString();
+                Calendar.SelectionStart = Convert.ToDateTime(dgvHangHoa.Rows[r].Cells[5].Value);
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -112,6 +116,7 @@ namespace ADO_NET
             btnSua.Enabled = true;
             btnTimKiem.Enabled = true;
             btnThem.Enabled = true;
+            click_cell = true;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -169,7 +174,7 @@ namespace ADO_NET
                     MessageBox.Show("Không tìm thấy!");
                 }
             }
-
+            click_cell = true;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -197,12 +202,14 @@ namespace ADO_NET
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
             btnTimKiem.Enabled = false;
+            click_cell = false;
         }
 
         private void btnReload_Click(object sender, EventArgs e)
         {
             ResetText();
             LoadData();
+            click_cell = true;
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -219,6 +226,7 @@ namespace ADO_NET
             btnThem.Enabled = false;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
+            click_cell = false;
         }
 
         private void btnTongSL_Click(object sender, EventArgs e)

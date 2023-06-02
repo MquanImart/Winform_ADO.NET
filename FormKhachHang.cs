@@ -24,6 +24,7 @@ namespace ADO_NET
     {
         ChucNang chucnang = ChucNang.None;
         BL_KhachHang bl = new BL_KhachHang();
+        bool click_cell = false;
         public FormKhachHang()
         {
             InitializeComponent();
@@ -63,8 +64,6 @@ namespace ADO_NET
             btnsua.Enabled = !chinhsua;
             btnxoa.Enabled = !chinhsua;
             btnthoat.Enabled = !chinhsua;
-
-
         }
         private void FormKhachHang_Load(object sender, EventArgs e)
         {
@@ -92,6 +91,7 @@ namespace ADO_NET
         {
             Reset_Txt();
             changState(false);
+            click_cell = true;
         }
 
         private void btnluu_Click(object sender, EventArgs e)
@@ -162,20 +162,25 @@ namespace ADO_NET
 
             changState(true);
             txtID.Focus();
+            click_cell = false;
         }
 
         private void btnreload_Click(object sender, EventArgs e)
         {
             Reset_Txt();
             LoadData();
+            click_cell = true;
         }
         private void dgvKH_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvKH.CurrentCell.RowIndex;
-            txtID.Text = dgvKH.Rows[r].Cells[0].Value.ToString();
-            txtHoTen.Text = dgvKH.Rows[r].Cells[1].Value.ToString();
-            txtDiaChi.Text = dgvKH.Rows[r].Cells[2].Value.ToString();
-            txtSDT.Text = dgvKH.Rows[r].Cells[3].Value.ToString();
+            if (r < dgvKH.Rows.Count -1 && click_cell)
+            {
+                txtID.Text = dgvKH.Rows[r].Cells[0].Value.ToString();
+                txtHoTen.Text = dgvKH.Rows[r].Cells[1].Value.ToString();
+                txtDiaChi.Text = dgvKH.Rows[r].Cells[2].Value.ToString();
+                txtSDT.Text = dgvKH.Rows[r].Cells[3].Value.ToString();
+            }
         }
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
@@ -189,6 +194,7 @@ namespace ADO_NET
             chucnang = ChucNang.TimKiem;
             changState(true);
             Reset_Txt();
+            click_cell = false;
         }
 
         private void btnTinhTong_Click(object sender, EventArgs e)

@@ -25,6 +25,7 @@ namespace ADO_NET
     {
         LuaChon luaChon = LuaChon.None;
         BL_AmThuc blAmThuc = new BL_AmThuc();
+        bool click_cell = true;
         public FormAmThuc()
         {
             InitializeComponent();
@@ -75,10 +76,13 @@ namespace ADO_NET
         private void dgvAmThuc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvAmThuc.CurrentCell.RowIndex;
-            txtID.Text = dgvAmThuc.Rows[r].Cells[0].Value.ToString();
-            txtTen.Text = dgvAmThuc.Rows[r].Cells[1].Value.ToString();
-            txtGia.Text = dgvAmThuc.Rows[r].Cells[2].Value.ToString();
-            txtSL.Text = dgvAmThuc.Rows[r].Cells[3].Value.ToString();
+            if (click_cell)
+            {
+                txtID.Text = dgvAmThuc.Rows[r].Cells[0].Value.ToString();
+                txtTen.Text = dgvAmThuc.Rows[r].Cells[1].Value.ToString();
+                txtGia.Text = dgvAmThuc.Rows[r].Cells[2].Value.ToString();
+                txtSL.Text = dgvAmThuc.Rows[r].Cells[3].Value.ToString();
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -121,7 +125,7 @@ namespace ADO_NET
             btnSua.Enabled = true;
             btnTimKiem.Enabled = true;
             btnThem.Enabled = true;
-
+            click_cell = true;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -193,6 +197,7 @@ namespace ADO_NET
                     MessageBox.Show("Không tìm thấy!");
                 }
             }
+            click_cell = true;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -220,12 +225,14 @@ namespace ADO_NET
             btnXoa.Enabled = false;
             btnSua.Enabled = false;
             btnTimKiem.Enabled = false;
+            click_cell = false;
         }
 
         private void btnReload_Click(object sender, EventArgs e)
         {
             ResetText();
             LoadData();
+            click_cell = true;
         }
 
         private void btnTongTien_Click(object sender, EventArgs e)
@@ -266,7 +273,7 @@ namespace ADO_NET
             btnXoa.Enabled = false;
             btnSua.Enabled = false;
             btnThem.Enabled = false;
-
+            click_cell = false;
         }
     }
 }

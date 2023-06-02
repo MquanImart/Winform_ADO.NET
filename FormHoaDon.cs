@@ -17,6 +17,7 @@ namespace ADO_NET
     {
         LuaChon luaChon = LuaChon.None;
         BL_HoaDon blHoaDon = new BL_HoaDon();
+        bool click_cell = true;
         public FormHoaDon()
         {
             InitializeComponent();
@@ -37,10 +38,6 @@ namespace ADO_NET
             pnlHoaDon.Enabled = chinhsua;
             btnHuy.Enabled = chinhsua;
             btnLuu.Enabled = chinhsua;
-
-            pnlHoaDon.Enabled = true;
-            btnHuy.Enabled = true;
-            btnLuu.Enabled = true;
         }
         void LoadData()
         {
@@ -65,17 +62,20 @@ namespace ADO_NET
         private void dgvHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvHoaDon.CurrentCell.RowIndex;
-            txtID.Text = dgvHoaDon.Rows[r].Cells[0].Value.ToString();
-            txtDanhMuc.Text = dgvHoaDon.Rows[r].Cells[3].Value.ToString();
-            txtLoai.Text = dgvHoaDon.Rows[r].Cells[4].Value.ToString();
-            txtTien.Text = dgvHoaDon.Rows[r].Cells[5].Value.ToString();
-            // Đưa hàng thứ 1 của dgvHoaDon lên monthCalendar1
-            monthCalendar1.SetDate((DateTime)dgvHoaDon.Rows[r].Cells[1].Value);
-            //  Dùng timespan để lấy giờ
-            TimeSpan gio = (TimeSpan)dgvHoaDon.Rows[r].Cells[2].Value;
-            numericUpDownHour.Value = gio.Hours;
-            numericUpDownMinute.Value = gio.Minutes;
-            numericUpDownSec.Value = gio.Seconds;
+            if (click_cell)
+            {
+                txtID.Text = dgvHoaDon.Rows[r].Cells[0].Value.ToString();
+                txtDanhMuc.Text = dgvHoaDon.Rows[r].Cells[3].Value.ToString();
+                txtLoai.Text = dgvHoaDon.Rows[r].Cells[4].Value.ToString();
+                txtTien.Text = dgvHoaDon.Rows[r].Cells[5].Value.ToString();
+                // Đưa hàng thứ 1 của dgvHoaDon lên monthCalendar1
+                monthCalendar1.SelectionStart = Convert.ToDateTime(dgvHoaDon.Rows[r].Cells[1].Value);
+                //  Dùng timespan để lấy giờ
+                TimeSpan gio = (TimeSpan)dgvHoaDon.Rows[r].Cells[2].Value;
+                numericUpDownHour.Value = gio.Hours;
+                numericUpDownMinute.Value = gio.Minutes;
+                numericUpDownSec.Value = gio.Seconds;
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -121,6 +121,7 @@ namespace ADO_NET
             btnXoa.Enabled = true;
             btnThem.Enabled = true;
             btnTimKiem.Enabled = true;
+            click_cell = true;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -181,13 +182,14 @@ namespace ADO_NET
                     MessageBox.Show("Không tìm thấy. Lỗi rồi!!!");
                 }
             }
+            click_cell = true;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             luaChon = LuaChon.Sua;
             changeState(true);
-            txtID.Enabled = true;
+            txtID.Enabled = false;
             txtDanhMuc.Enabled = true;
             txtLoai.Enabled = true;
             txtTien.Enabled = true;
@@ -218,6 +220,7 @@ namespace ADO_NET
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
             btnTimKiem.Enabled = false;
+            click_cell = false;
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -237,12 +240,14 @@ namespace ADO_NET
             btnSua.Enabled = false;
             btnThem.Enabled = false;
             btnXoa.Enabled = false;
+            click_cell = false;
         }
 
         private void btnReload_Click(object sender, EventArgs e)
         {
             ResetText();
             LoadData();
+            click_cell = true;
         }
 
         private void btnTongChi_Click(object sender, EventArgs e)

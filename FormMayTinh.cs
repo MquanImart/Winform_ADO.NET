@@ -15,6 +15,7 @@ namespace ADO_NET.BS_layer
     {
         ChucNang chucnang = ChucNang.None;
         BL_MayTinh bl = new BL_MayTinh();
+        bool click_cell = true;
         public FormMayTinh()
         {
             InitializeComponent();
@@ -71,6 +72,7 @@ namespace ADO_NET.BS_layer
         {
             Reset_Txt();
             LoadData();
+            click_cell = true;
         }
 
         private void btnthem_Click(object sender, EventArgs e)
@@ -80,6 +82,7 @@ namespace ADO_NET.BS_layer
 
             changState(true);
             txtID.Focus();
+            click_cell = false;
         }
 
         private void btnsua_Click(object sender, EventArgs e)
@@ -97,6 +100,7 @@ namespace ADO_NET.BS_layer
             changState(true);
             Reset_Txt();
             txtID.Enabled = true;
+            click_cell = false;
         }
 
         private void btnxoa_Click(object sender, EventArgs e)
@@ -167,17 +171,21 @@ namespace ADO_NET.BS_layer
         {
             Reset_Txt();
             changState(false);
+            click_cell = true;
         }
 
         private void dgvMT_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvMT.CurrentCell.RowIndex;
-            txtID.Text = dgvMT.Rows[r].Cells[0].Value.ToString();
-            txtmanhinh.Text = dgvMT.Rows[r].Cells[1].Value.ToString();
-            txtCPU.Text = dgvMT.Rows[r].Cells[2].Value.ToString();
-            txtOcung.Text = dgvMT.Rows[r].Cells[3].Value.ToString();
-            txtRam.Text = dgvMT.Rows[r].Cells[4].Value.ToString();
-            txttinhtrang.Text = dgvMT.Rows[r].Cells[5].Value.ToString();
+            if (r < dgvMT.RowCount - 1 && click_cell)
+            {
+                txtID.Text = dgvMT.Rows[r].Cells[0].Value.ToString();
+                txtmanhinh.Text = dgvMT.Rows[r].Cells[1].Value.ToString();
+                txtCPU.Text = dgvMT.Rows[r].Cells[2].Value.ToString();
+                txtOcung.Text = dgvMT.Rows[r].Cells[3].Value.ToString();
+                txtRam.Text = dgvMT.Rows[r].Cells[4].Value.ToString();
+                txttinhtrang.Text = dgvMT.Rows[r].Cells[5].Value.ToString();
+            }
         }
 
         private void btnSL_Click(object sender, EventArgs e)
