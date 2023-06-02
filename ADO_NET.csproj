@@ -52,9 +52,16 @@
     <Compile Include="BS_layer\BL_HoaDon.cs" />
     <Compile Include="BS_layer\BL_LichSuHoatDong.cs" />
     <Compile Include="BS_layer\BL_Login.cs" />
+    <Compile Include="BS_layer\BL_MayTinh.cs" />
     <Compile Include="BS_layer\BL_NhanVien.cs" />
     <Compile Include="BS_layer\BL_TaiKhoan.cs" />
     <Compile Include="BS_layer\BL_KhachHang.cs" />
+    <Compile Include="FormMayTinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMayTinh.Designer.cs">
+      <DependentUpon>FormMayTinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB_layer\DB_DataBase.cs" />
     <Compile Include="FormAmThuc.cs">
       <SubType>Form</SubType>
@@ -112,6 +119,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormMayTinh.resx">
+      <DependentUpon>FormMayTinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAmThuc.resx">
       <DependentUpon>FormAmThuc.cs</DependentUpon>
     </EmbeddedResource>

@@ -46,7 +46,8 @@ namespace ADO_NET
 
         private void btnMaytinh_Click(object sender, EventArgs e)
         {
-
+            FormMayTinh formMayTinh = new FormMayTinh();
+            formMayTinh.ShowDialog();
         }
 
         private void btnLichsu_Click(object sender, EventArgs e)

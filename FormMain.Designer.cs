@@ -32,20 +32,20 @@
             this.lbldangnhap = new System.Windows.Forms.Label();
             this.txtuser = new System.Windows.Forms.TextBox();
             this.pnllogin = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtpass = new System.Windows.Forms.TextBox();
-            this.pnlchucnang = new System.Windows.Forms.Panel();
-            this.btnAmthuc = new System.Windows.Forms.Button();
-            this.btnHoadon = new System.Windows.Forms.Button();
-            this.btnHanghoa = new System.Windows.Forms.Button();
-            this.btnKhachhang = new System.Windows.Forms.Button();
-            this.btnLichsu = new System.Windows.Forms.Button();
-            this.btnGiuxe = new System.Windows.Forms.Button();
-            this.btnNhanvien = new System.Windows.Forms.Button();
-            this.btnMaytinh = new System.Windows.Forms.Button();
-            this.btnthoat = new System.Windows.Forms.Button();
             this.btndangnhap = new System.Windows.Forms.Button();
+            this.txtpass = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnlchucnang = new System.Windows.Forms.Panel();
+            this.btnthoat = new System.Windows.Forms.Button();
+            this.btnMaytinh = new System.Windows.Forms.Button();
+            this.btnNhanvien = new System.Windows.Forms.Button();
+            this.btnGiuxe = new System.Windows.Forms.Button();
+            this.btnLichsu = new System.Windows.Forms.Button();
+            this.btnKhachhang = new System.Windows.Forms.Button();
+            this.btnHanghoa = new System.Windows.Forms.Button();
+            this.btnHoadon = new System.Windows.Forms.Button();
+            this.btnAmthuc = new System.Windows.Forms.Button();
             this.pnllogin.SuspendLayout();
             this.pnlchucnang.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +56,7 @@
             this.lbltitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltitle.Location = new System.Drawing.Point(194, 34);
             this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(411, 39);
+            this.lbltitle.Size = new System.Drawing.Size(396, 38);
             this.lbltitle.TabIndex = 0;
             this.lbltitle.Text = "Quản lý Dịch Vụ Internet";
             // 
@@ -64,11 +64,11 @@
             // 
             this.lbldangnhap.AutoSize = true;
             this.lbldangnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldangnhap.Location = new System.Drawing.Point(177, 9);
+            this.lbldangnhap.Location = new System.Drawing.Point(173, 10);
             this.lbldangnhap.Name = "lbldangnhap";
-            this.lbldangnhap.Size = new System.Drawing.Size(85, 29);
+            this.lbldangnhap.Size = new System.Drawing.Size(78, 29);
             this.lbldangnhap.TabIndex = 1;
-            this.lbldangnhap.Text = "Log in";
+            this.lbldangnhap.Text = "Login";
             // 
             // txtuser
             // 
@@ -91,14 +91,23 @@
             this.pnllogin.Size = new System.Drawing.Size(404, 140);
             this.pnllogin.TabIndex = 3;
             // 
-            // label1
+            // btndangnhap
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "User Name";
+            this.btndangnhap.Location = new System.Drawing.Point(325, 93);
+            this.btndangnhap.Name = "btndangnhap";
+            this.btndangnhap.Size = new System.Drawing.Size(47, 37);
+            this.btndangnhap.TabIndex = 9;
+            this.btndangnhap.Text = "Ok";
+            this.btndangnhap.UseVisualStyleBackColor = true;
+            this.btndangnhap.Click += new System.EventHandler(this.btndangnhap_Click);
+            // 
+            // txtpass
+            // 
+            this.txtpass.Location = new System.Drawing.Point(146, 100);
+            this.txtpass.Name = "txtpass";
+            this.txtpass.PasswordChar = '*';
+            this.txtpass.Size = new System.Drawing.Size(155, 22);
+            this.txtpass.TabIndex = 5;
             // 
             // label2
             // 
@@ -109,13 +118,14 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Password";
             // 
-            // txtpass
+            // label1
             // 
-            this.txtpass.Location = new System.Drawing.Point(146, 100);
-            this.txtpass.Name = "txtpass";
-            this.txtpass.PasswordChar = '*';
-            this.txtpass.Size = new System.Drawing.Size(155, 22);
-            this.txtpass.TabIndex = 5;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(54, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 16);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "User Name";
             // 
             // pnlchucnang
             // 
@@ -134,75 +144,15 @@
             this.pnlchucnang.Size = new System.Drawing.Size(623, 189);
             this.pnlchucnang.TabIndex = 4;
             // 
-            // btnAmthuc
+            // btnthoat
             // 
-            this.btnAmthuc.Location = new System.Drawing.Point(19, 13);
-            this.btnAmthuc.Name = "btnAmthuc";
-            this.btnAmthuc.Size = new System.Drawing.Size(145, 37);
-            this.btnAmthuc.TabIndex = 0;
-            this.btnAmthuc.Text = "Ẩm thực";
-            this.btnAmthuc.UseVisualStyleBackColor = true;
-            this.btnAmthuc.Click += new System.EventHandler(this.btnAmthuc_Click);
-            // 
-            // btnHoadon
-            // 
-            this.btnHoadon.Location = new System.Drawing.Point(19, 122);
-            this.btnHoadon.Name = "btnHoadon";
-            this.btnHoadon.Size = new System.Drawing.Size(145, 37);
-            this.btnHoadon.TabIndex = 1;
-            this.btnHoadon.Text = "Hóa đơn";
-            this.btnHoadon.UseVisualStyleBackColor = true;
-            this.btnHoadon.Click += new System.EventHandler(this.btnHoadon_Click);
-            // 
-            // btnHanghoa
-            // 
-            this.btnHanghoa.Location = new System.Drawing.Point(19, 68);
-            this.btnHanghoa.Name = "btnHanghoa";
-            this.btnHanghoa.Size = new System.Drawing.Size(145, 37);
-            this.btnHanghoa.TabIndex = 2;
-            this.btnHanghoa.Text = "Hàng Hóa";
-            this.btnHanghoa.UseVisualStyleBackColor = true;
-            this.btnHanghoa.Click += new System.EventHandler(this.btnHanghoa_Click);
-            // 
-            // btnKhachhang
-            // 
-            this.btnKhachhang.Location = new System.Drawing.Point(450, 68);
-            this.btnKhachhang.Name = "btnKhachhang";
-            this.btnKhachhang.Size = new System.Drawing.Size(145, 37);
-            this.btnKhachhang.TabIndex = 3;
-            this.btnKhachhang.Text = "Khách Hàng";
-            this.btnKhachhang.UseVisualStyleBackColor = true;
-            this.btnKhachhang.Click += new System.EventHandler(this.btnKhachhang_Click);
-            // 
-            // btnLichsu
-            // 
-            this.btnLichsu.Location = new System.Drawing.Point(234, 122);
-            this.btnLichsu.Name = "btnLichsu";
-            this.btnLichsu.Size = new System.Drawing.Size(145, 37);
-            this.btnLichsu.TabIndex = 4;
-            this.btnLichsu.Text = "Lịch Sử Hoạt Động";
-            this.btnLichsu.UseVisualStyleBackColor = true;
-            this.btnLichsu.Click += new System.EventHandler(this.btnLichsu_Click);
-            // 
-            // btnGiuxe
-            // 
-            this.btnGiuxe.Location = new System.Drawing.Point(234, 13);
-            this.btnGiuxe.Name = "btnGiuxe";
-            this.btnGiuxe.Size = new System.Drawing.Size(145, 37);
-            this.btnGiuxe.TabIndex = 5;
-            this.btnGiuxe.Text = "Giữ Xe";
-            this.btnGiuxe.UseVisualStyleBackColor = true;
-            this.btnGiuxe.Click += new System.EventHandler(this.btnGiuxe_Click);
-            // 
-            // btnNhanvien
-            // 
-            this.btnNhanvien.Location = new System.Drawing.Point(450, 9);
-            this.btnNhanvien.Name = "btnNhanvien";
-            this.btnNhanvien.Size = new System.Drawing.Size(145, 37);
-            this.btnNhanvien.TabIndex = 6;
-            this.btnNhanvien.Text = "Nhân viên";
-            this.btnNhanvien.UseVisualStyleBackColor = true;
-            this.btnNhanvien.Click += new System.EventHandler(this.btnNhanvien_Click);
+            this.btnthoat.Location = new System.Drawing.Point(450, 122);
+            this.btnthoat.Name = "btnthoat";
+            this.btnthoat.Size = new System.Drawing.Size(145, 37);
+            this.btnthoat.TabIndex = 8;
+            this.btnthoat.Text = "Đăng xuất";
+            this.btnthoat.UseVisualStyleBackColor = true;
+            this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
             // 
             // btnMaytinh
             // 
@@ -214,25 +164,75 @@
             this.btnMaytinh.UseVisualStyleBackColor = true;
             this.btnMaytinh.Click += new System.EventHandler(this.btnMaytinh_Click);
             // 
-            // btnthoat
+            // btnNhanvien
             // 
-            this.btnthoat.Location = new System.Drawing.Point(450, 122);
-            this.btnthoat.Name = "btnthoat";
-            this.btnthoat.Size = new System.Drawing.Size(145, 37);
-            this.btnthoat.TabIndex = 8;
-            this.btnthoat.Text = "Đăng xuất";
-            this.btnthoat.UseVisualStyleBackColor = true;
-            this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
+            this.btnNhanvien.Location = new System.Drawing.Point(450, 9);
+            this.btnNhanvien.Name = "btnNhanvien";
+            this.btnNhanvien.Size = new System.Drawing.Size(145, 37);
+            this.btnNhanvien.TabIndex = 6;
+            this.btnNhanvien.Text = "Nhân viên";
+            this.btnNhanvien.UseVisualStyleBackColor = true;
+            this.btnNhanvien.Click += new System.EventHandler(this.btnNhanvien_Click);
             // 
-            // btndangnhap
+            // btnGiuxe
             // 
-            this.btndangnhap.Location = new System.Drawing.Point(325, 93);
-            this.btndangnhap.Name = "btndangnhap";
-            this.btndangnhap.Size = new System.Drawing.Size(47, 37);
-            this.btndangnhap.TabIndex = 9;
-            this.btndangnhap.Text = "Ok";
-            this.btndangnhap.UseVisualStyleBackColor = true;
-            this.btndangnhap.Click += new System.EventHandler(this.btndangnhap_Click);
+            this.btnGiuxe.Location = new System.Drawing.Point(234, 13);
+            this.btnGiuxe.Name = "btnGiuxe";
+            this.btnGiuxe.Size = new System.Drawing.Size(145, 37);
+            this.btnGiuxe.TabIndex = 5;
+            this.btnGiuxe.Text = "Giữ Xe";
+            this.btnGiuxe.UseVisualStyleBackColor = true;
+            this.btnGiuxe.Click += new System.EventHandler(this.btnGiuxe_Click);
+            // 
+            // btnLichsu
+            // 
+            this.btnLichsu.Location = new System.Drawing.Point(234, 122);
+            this.btnLichsu.Name = "btnLichsu";
+            this.btnLichsu.Size = new System.Drawing.Size(145, 37);
+            this.btnLichsu.TabIndex = 4;
+            this.btnLichsu.Text = "Lịch Sử Hoạt Động";
+            this.btnLichsu.UseVisualStyleBackColor = true;
+            this.btnLichsu.Click += new System.EventHandler(this.btnLichsu_Click);
+            // 
+            // btnKhachhang
+            // 
+            this.btnKhachhang.Location = new System.Drawing.Point(450, 68);
+            this.btnKhachhang.Name = "btnKhachhang";
+            this.btnKhachhang.Size = new System.Drawing.Size(145, 37);
+            this.btnKhachhang.TabIndex = 3;
+            this.btnKhachhang.Text = "Khách Hàng";
+            this.btnKhachhang.UseVisualStyleBackColor = true;
+            this.btnKhachhang.Click += new System.EventHandler(this.btnKhachhang_Click);
+            // 
+            // btnHanghoa
+            // 
+            this.btnHanghoa.Location = new System.Drawing.Point(19, 68);
+            this.btnHanghoa.Name = "btnHanghoa";
+            this.btnHanghoa.Size = new System.Drawing.Size(145, 37);
+            this.btnHanghoa.TabIndex = 2;
+            this.btnHanghoa.Text = "Hàng Hóa";
+            this.btnHanghoa.UseVisualStyleBackColor = true;
+            this.btnHanghoa.Click += new System.EventHandler(this.btnHanghoa_Click);
+            // 
+            // btnHoadon
+            // 
+            this.btnHoadon.Location = new System.Drawing.Point(19, 122);
+            this.btnHoadon.Name = "btnHoadon";
+            this.btnHoadon.Size = new System.Drawing.Size(145, 37);
+            this.btnHoadon.TabIndex = 1;
+            this.btnHoadon.Text = "Hóa đơn";
+            this.btnHoadon.UseVisualStyleBackColor = true;
+            this.btnHoadon.Click += new System.EventHandler(this.btnHoadon_Click);
+            // 
+            // btnAmthuc
+            // 
+            this.btnAmthuc.Location = new System.Drawing.Point(19, 13);
+            this.btnAmthuc.Name = "btnAmthuc";
+            this.btnAmthuc.Size = new System.Drawing.Size(145, 37);
+            this.btnAmthuc.TabIndex = 0;
+            this.btnAmthuc.Text = "Ẩm thực";
+            this.btnAmthuc.UseVisualStyleBackColor = true;
+            this.btnAmthuc.Click += new System.EventHandler(this.btnAmthuc_Click);
             // 
             // FormMain
             // 
