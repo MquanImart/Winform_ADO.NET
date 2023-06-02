@@ -51,70 +51,75 @@
             this.btnNaptien = new System.Windows.Forms.Button();
             this.btnTruTien = new System.Windows.Forms.Button();
             this.pnlMoney = new System.Windows.Forms.Panel();
-            this.numNap = new System.Windows.Forms.NumericUpDown();
             this.numTru = new System.Windows.Forms.NumericUpDown();
+            this.numNap = new System.Windows.Forms.NumericUpDown();
+            this.lbltitle = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.pnlnv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTK)).BeginInit();
             this.pnlMoney.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numNap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTru)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNap)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnluu
             // 
-            this.btnluu.Location = new System.Drawing.Point(346, 211);
+            this.btnluu.Location = new System.Drawing.Point(324, 110);
             this.btnluu.Name = "btnluu";
-            this.btnluu.Size = new System.Drawing.Size(76, 28);
+            this.btnluu.Size = new System.Drawing.Size(76, 44);
             this.btnluu.TabIndex = 45;
-            this.btnluu.Text = "Luu";
+            this.btnluu.Text = "Lưu";
             this.btnluu.UseVisualStyleBackColor = true;
             this.btnluu.Click += new System.EventHandler(this.btnluu_Click);
             // 
             // btnhuy
             // 
-            this.btnhuy.Location = new System.Drawing.Point(430, 211);
+            this.btnhuy.Location = new System.Drawing.Point(405, 110);
             this.btnhuy.Name = "btnhuy";
-            this.btnhuy.Size = new System.Drawing.Size(80, 28);
+            this.btnhuy.Size = new System.Drawing.Size(80, 44);
             this.btnhuy.TabIndex = 44;
-            this.btnhuy.Text = "Huy";
+            this.btnhuy.Text = "Hủy";
             this.btnhuy.UseVisualStyleBackColor = true;
             this.btnhuy.Click += new System.EventHandler(this.btnhuy_Click);
             // 
             // btnxoa
             // 
-            this.btnxoa.Location = new System.Drawing.Point(187, 211);
+            this.btnxoa.Location = new System.Drawing.Point(381, 9);
             this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(76, 28);
+            this.btnxoa.Size = new System.Drawing.Size(76, 38);
             this.btnxoa.TabIndex = 43;
-            this.btnxoa.Text = "Xoa";
+            this.btnxoa.Text = "Xóa";
             this.btnxoa.UseVisualStyleBackColor = true;
             this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // btnthem
             // 
-            this.btnthem.Location = new System.Drawing.Point(12, 211);
+            this.btnthem.Location = new System.Drawing.Point(199, 8);
             this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(85, 28);
+            this.btnthem.Size = new System.Drawing.Size(85, 38);
             this.btnthem.TabIndex = 42;
-            this.btnthem.Text = "Them";
+            this.btnthem.Text = "Thêm";
             this.btnthem.UseVisualStyleBackColor = true;
             this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
             // btnsua
             // 
-            this.btnsua.Location = new System.Drawing.Point(103, 211);
+            this.btnsua.Location = new System.Drawing.Point(290, 9);
             this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(78, 28);
+            this.btnsua.Size = new System.Drawing.Size(85, 37);
             this.btnsua.TabIndex = 41;
-            this.btnsua.Text = "Sua";
+            this.btnsua.Text = "Sửa";
             this.btnsua.UseVisualStyleBackColor = true;
             this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
             // btnreload
             // 
-            this.btnreload.Location = new System.Drawing.Point(539, 45);
+            this.btnreload.Location = new System.Drawing.Point(21, 56);
             this.btnreload.Name = "btnreload";
-            this.btnreload.Size = new System.Drawing.Size(94, 25);
+            this.btnreload.Size = new System.Drawing.Size(94, 39);
             this.btnreload.TabIndex = 40;
             this.btnreload.Text = "Reload";
             this.btnreload.UseVisualStyleBackColor = true;
@@ -122,16 +127,19 @@
             // 
             // btnthoat
             // 
-            this.btnthoat.Location = new System.Drawing.Point(539, 14);
+            this.btnthoat.Location = new System.Drawing.Point(21, 11);
             this.btnthoat.Name = "btnthoat";
-            this.btnthoat.Size = new System.Drawing.Size(94, 25);
+            this.btnthoat.Size = new System.Drawing.Size(94, 39);
             this.btnthoat.TabIndex = 39;
-            this.btnthoat.Text = "Thoat";
+            this.btnthoat.Text = "Thoát";
             this.btnthoat.UseVisualStyleBackColor = true;
             this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
             // 
             // pnlnv
             // 
+            this.pnlnv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlnv.Controls.Add(this.btnhuy);
+            this.pnlnv.Controls.Add(this.btnluu);
             this.pnlnv.Controls.Add(this.btnshowpass);
             this.pnlnv.Controls.Add(this.lbmoney);
             this.pnlnv.Controls.Add(this.txtMoney);
@@ -141,9 +149,9 @@
             this.pnlnv.Controls.Add(this.lbPass);
             this.pnlnv.Controls.Add(this.txtUser);
             this.pnlnv.Controls.Add(this.lbusername);
-            this.pnlnv.Location = new System.Drawing.Point(10, 256);
+            this.pnlnv.Location = new System.Drawing.Point(46, 371);
             this.pnlnv.Name = "pnlnv";
-            this.pnlnv.Size = new System.Drawing.Size(498, 159);
+            this.pnlnv.Size = new System.Drawing.Size(498, 170);
             this.pnlnv.TabIndex = 38;
             // 
             // btnshowpass
@@ -224,7 +232,7 @@
             // dgvTK
             // 
             this.dgvTK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTK.Location = new System.Drawing.Point(10, 12);
+            this.dgvTK.Location = new System.Drawing.Point(44, 73);
             this.dgvTK.Name = "dgvTK";
             this.dgvTK.RowHeadersWidth = 51;
             this.dgvTK.RowTemplate.Height = 24;
@@ -234,7 +242,7 @@
             // 
             // btnshowpassw
             // 
-            this.btnshowpassw.Location = new System.Drawing.Point(539, 76);
+            this.btnshowpassw.Location = new System.Drawing.Point(21, 101);
             this.btnshowpassw.Name = "btnshowpassw";
             this.btnshowpassw.Size = new System.Drawing.Size(94, 47);
             this.btnshowpassw.TabIndex = 47;
@@ -244,7 +252,7 @@
             // 
             // txtshowpass
             // 
-            this.txtshowpass.Location = new System.Drawing.Point(539, 129);
+            this.txtshowpass.Location = new System.Drawing.Point(21, 154);
             this.txtshowpass.Name = "txtshowpass";
             this.txtshowpass.PasswordChar = '*';
             this.txtshowpass.Size = new System.Drawing.Size(94, 22);
@@ -252,51 +260,35 @@
             // 
             // btnNaptien
             // 
-            this.btnNaptien.Location = new System.Drawing.Point(13, 9);
+            this.btnNaptien.Location = new System.Drawing.Point(21, 9);
             this.btnNaptien.Name = "btnNaptien";
             this.btnNaptien.Size = new System.Drawing.Size(94, 35);
             this.btnNaptien.TabIndex = 49;
-            this.btnNaptien.Text = "Nap Tien";
+            this.btnNaptien.Text = "Nạp Tiền";
             this.btnNaptien.UseVisualStyleBackColor = true;
             this.btnNaptien.Click += new System.EventHandler(this.btnNaptien_Click);
             // 
             // btnTruTien
             // 
-            this.btnTruTien.Location = new System.Drawing.Point(13, 128);
+            this.btnTruTien.Location = new System.Drawing.Point(21, 91);
             this.btnTruTien.Name = "btnTruTien";
             this.btnTruTien.Size = new System.Drawing.Size(94, 35);
             this.btnTruTien.TabIndex = 51;
-            this.btnTruTien.Text = "Tru Tien";
+            this.btnTruTien.Text = "Trừ Tiền";
             this.btnTruTien.UseVisualStyleBackColor = true;
             this.btnTruTien.Click += new System.EventHandler(this.btnTruTien_Click);
             // 
             // pnlMoney
             // 
+            this.pnlMoney.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMoney.Controls.Add(this.numTru);
             this.pnlMoney.Controls.Add(this.btnNaptien);
             this.pnlMoney.Controls.Add(this.numNap);
             this.pnlMoney.Controls.Add(this.btnTruTien);
-            this.pnlMoney.Location = new System.Drawing.Point(526, 202);
+            this.pnlMoney.Location = new System.Drawing.Point(550, 371);
             this.pnlMoney.Name = "pnlMoney";
-            this.pnlMoney.Size = new System.Drawing.Size(122, 213);
+            this.pnlMoney.Size = new System.Drawing.Size(139, 170);
             this.pnlMoney.TabIndex = 53;
-            // 
-            // numNap
-            // 
-            this.numNap.Increment = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numNap.Location = new System.Drawing.Point(13, 50);
-            this.numNap.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.numNap.Name = "numNap";
-            this.numNap.Size = new System.Drawing.Size(94, 22);
-            this.numNap.TabIndex = 54;
             // 
             // numTru
             // 
@@ -305,7 +297,7 @@
             0,
             0,
             0});
-            this.numTru.Location = new System.Drawing.Point(13, 169);
+            this.numTru.Location = new System.Drawing.Point(21, 136);
             this.numTru.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -315,22 +307,66 @@
             this.numTru.Size = new System.Drawing.Size(94, 22);
             this.numTru.TabIndex = 55;
             // 
+            // numNap
+            // 
+            this.numNap.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numNap.Location = new System.Drawing.Point(21, 50);
+            this.numNap.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numNap.Name = "numNap";
+            this.numNap.Size = new System.Drawing.Size(94, 22);
+            this.numNap.TabIndex = 54;
+            // 
+            // lbltitle
+            // 
+            this.lbltitle.AutoSize = true;
+            this.lbltitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltitle.Location = new System.Drawing.Point(175, 20);
+            this.lbltitle.Name = "lbltitle";
+            this.lbltitle.Size = new System.Drawing.Size(327, 39);
+            this.lbltitle.TabIndex = 69;
+            this.lbltitle.Text = "Quản Lý Tài Khoản";
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnthem);
+            this.panel2.Controls.Add(this.btnsua);
+            this.panel2.Controls.Add(this.btnxoa);
+            this.panel2.Location = new System.Drawing.Point(44, 284);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(645, 62);
+            this.panel2.TabIndex = 71;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnthoat);
+            this.panel3.Controls.Add(this.btnreload);
+            this.panel3.Controls.Add(this.btnshowpassw);
+            this.panel3.Controls.Add(this.txtshowpass);
+            this.panel3.Location = new System.Drawing.Point(550, 73);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(139, 193);
+            this.panel3.TabIndex = 72;
+            // 
             // FormTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 423);
+            this.ClientSize = new System.Drawing.Size(735, 585);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.lbltitle);
             this.Controls.Add(this.pnlMoney);
-            this.Controls.Add(this.txtshowpass);
-            this.Controls.Add(this.btnshowpassw);
             this.Controls.Add(this.dgvTK);
-            this.Controls.Add(this.btnluu);
-            this.Controls.Add(this.btnhuy);
-            this.Controls.Add(this.btnxoa);
-            this.Controls.Add(this.btnthem);
-            this.Controls.Add(this.btnsua);
-            this.Controls.Add(this.btnreload);
-            this.Controls.Add(this.btnthoat);
             this.Controls.Add(this.pnlnv);
             this.Name = "FormTaiKhoan";
             this.Text = "FormTaiKhoan";
@@ -339,8 +375,11 @@
             this.pnlnv.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTK)).EndInit();
             this.pnlMoney.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numNap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTru)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNap)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,5 +411,8 @@
         private System.Windows.Forms.Panel pnlMoney;
         private System.Windows.Forms.NumericUpDown numTru;
         private System.Windows.Forms.NumericUpDown numNap;
+        private System.Windows.Forms.Label lbltitle;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }

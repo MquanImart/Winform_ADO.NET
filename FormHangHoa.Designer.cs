@@ -52,16 +52,23 @@
             this.pnlHangHoa = new System.Windows.Forms.Panel();
             this.Calendar = new System.Windows.Forms.MonthCalendar();
             this.dgvHangHoa = new System.Windows.Forms.DataGridView();
+            this.lbltitle = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.pnlHangHoa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnTongTien
             // 
-            this.btnTongTien.Location = new System.Drawing.Point(653, 274);
+            this.btnTongTien.Location = new System.Drawing.Point(15, 53);
             this.btnTongTien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTongTien.Name = "btnTongTien";
-            this.btnTongTien.Size = new System.Drawing.Size(105, 36);
+            this.btnTongTien.Size = new System.Drawing.Size(113, 36);
             this.btnTongTien.TabIndex = 56;
             this.btnTongTien.Text = "Tổng giá tiền";
             this.btnTongTien.UseVisualStyleBackColor = true;
@@ -69,10 +76,10 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(16, 274);
+            this.btnThem.Location = new System.Drawing.Point(13, 15);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(85, 36);
+            this.btnThem.Size = new System.Drawing.Size(113, 52);
             this.btnThem.TabIndex = 52;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -80,7 +87,7 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(643, 89);
+            this.btnHuy.Location = new System.Drawing.Point(643, 59);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(85, 36);
@@ -91,7 +98,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(643, 47);
+            this.btnLuu.Location = new System.Drawing.Point(643, 15);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(85, 36);
@@ -103,7 +110,7 @@
             // lbNgay
             // 
             this.lbNgay.AutoSize = true;
-            this.lbNgay.Location = new System.Drawing.Point(273, 15);
+            this.lbNgay.Location = new System.Drawing.Point(251, 15);
             this.lbNgay.Name = "lbNgay";
             this.lbNgay.Size = new System.Drawing.Size(79, 16);
             this.lbNgay.TabIndex = 19;
@@ -160,10 +167,10 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(288, 274);
+            this.btnXoa.Location = new System.Drawing.Point(13, 128);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(85, 36);
+            this.btnXoa.Size = new System.Drawing.Size(113, 50);
             this.btnXoa.TabIndex = 55;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -171,10 +178,10 @@
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(197, 274);
+            this.btnTimKiem.Location = new System.Drawing.Point(13, 187);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(85, 36);
+            this.btnTimKiem.Size = new System.Drawing.Size(113, 50);
             this.btnTimKiem.TabIndex = 54;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -182,10 +189,10 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(107, 274);
+            this.btnSua.Location = new System.Drawing.Point(13, 72);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(85, 36);
+            this.btnSua.Size = new System.Drawing.Size(113, 52);
             this.btnSua.TabIndex = 53;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -193,7 +200,7 @@
             // 
             // btnReload
             // 
-            this.btnReload.Location = new System.Drawing.Point(795, 55);
+            this.btnReload.Location = new System.Drawing.Point(26, 52);
             this.btnReload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(85, 36);
@@ -204,7 +211,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(795, 15);
+            this.btnThoat.Location = new System.Drawing.Point(26, 12);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(85, 36);
@@ -216,7 +223,7 @@
             // lbSl
             // 
             this.lbSl.AutoSize = true;
-            this.lbSl.Location = new System.Drawing.Point(11, 204);
+            this.lbSl.Location = new System.Drawing.Point(15, 205);
             this.lbSl.Name = "lbSl";
             this.lbSl.Size = new System.Drawing.Size(67, 16);
             this.lbSl.TabIndex = 12;
@@ -225,7 +232,7 @@
             // lbTen
             // 
             this.lbTen.AutoSize = true;
-            this.lbTen.Location = new System.Drawing.Point(15, 108);
+            this.lbTen.Location = new System.Drawing.Point(15, 103);
             this.lbTen.Name = "lbTen";
             this.lbTen.Size = new System.Drawing.Size(34, 16);
             this.lbTen.TabIndex = 11;
@@ -234,7 +241,7 @@
             // lbGia
             // 
             this.lbGia.AutoSize = true;
-            this.lbGia.Location = new System.Drawing.Point(25, 148);
+            this.lbGia.Location = new System.Drawing.Point(15, 146);
             this.lbGia.Name = "lbGia";
             this.lbGia.Size = new System.Drawing.Size(31, 16);
             this.lbGia.TabIndex = 10;
@@ -243,7 +250,7 @@
             // lbid
             // 
             this.lbid.AutoSize = true;
-            this.lbid.Location = new System.Drawing.Point(25, 23);
+            this.lbid.Location = new System.Drawing.Point(15, 25);
             this.lbid.Name = "lbid";
             this.lbid.Size = new System.Drawing.Size(23, 16);
             this.lbid.TabIndex = 9;
@@ -251,7 +258,7 @@
             // 
             // btnTongSL
             // 
-            this.btnTongSL.Location = new System.Drawing.Point(535, 274);
+            this.btnTongSL.Location = new System.Drawing.Point(15, 13);
             this.btnTongSL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTongSL.Name = "btnTongSL";
             this.btnTongSL.Size = new System.Drawing.Size(113, 36);
@@ -276,7 +283,7 @@
             this.pnlHangHoa.Controls.Add(this.lbGia);
             this.pnlHangHoa.Controls.Add(this.lbid);
             this.pnlHangHoa.Controls.Add(this.Calendar);
-            this.pnlHangHoa.Location = new System.Drawing.Point(15, 336);
+            this.pnlHangHoa.Location = new System.Drawing.Point(44, 349);
             this.pnlHangHoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlHangHoa.Name = "pnlHangHoa";
             this.pnlHangHoa.Size = new System.Drawing.Size(743, 252);
@@ -284,7 +291,7 @@
             // 
             // Calendar
             // 
-            this.Calendar.Location = new System.Drawing.Point(277, 42);
+            this.Calendar.Location = new System.Drawing.Point(334, 15);
             this.Calendar.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
             this.Calendar.MaxSelectionCount = 1;
             this.Calendar.Name = "Calendar";
@@ -293,7 +300,7 @@
             // dgvHangHoa
             // 
             this.dgvHangHoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHangHoa.Location = new System.Drawing.Point(16, 15);
+            this.dgvHangHoa.Location = new System.Drawing.Point(46, 87);
             this.dgvHangHoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvHangHoa.Name = "dgvHangHoa";
             this.dgvHangHoa.RowHeadersWidth = 51;
@@ -301,19 +308,57 @@
             this.dgvHangHoa.TabIndex = 48;
             this.dgvHangHoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHangHoa_CellClick);
             // 
+            // lbltitle
+            // 
+            this.lbltitle.AutoSize = true;
+            this.lbltitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltitle.Location = new System.Drawing.Point(349, 25);
+            this.lbltitle.Name = "lbltitle";
+            this.lbltitle.Size = new System.Drawing.Size(324, 39);
+            this.lbltitle.TabIndex = 64;
+            this.lbltitle.Text = "Quản Lý Hàng Hóa";
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnThem);
+            this.panel1.Controls.Add(this.btnXoa);
+            this.panel1.Controls.Add(this.btnSua);
+            this.panel1.Controls.Add(this.btnTimKiem);
+            this.panel1.Location = new System.Drawing.Point(806, 349);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(141, 252);
+            this.panel1.TabIndex = 65;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnThoat);
+            this.panel2.Controls.Add(this.btnReload);
+            this.panel2.Location = new System.Drawing.Point(806, 87);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(141, 100);
+            this.panel2.TabIndex = 66;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnTongSL);
+            this.panel3.Controls.Add(this.btnTongTien);
+            this.panel3.Location = new System.Drawing.Point(806, 241);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(141, 100);
+            this.panel3.TabIndex = 66;
+            // 
             // FormHangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 610);
-            this.Controls.Add(this.btnTongTien);
-            this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.btnTimKiem);
-            this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnReload);
-            this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.btnTongSL);
+            this.ClientSize = new System.Drawing.Size(1000, 635);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lbltitle);
             this.Controls.Add(this.pnlHangHoa);
             this.Controls.Add(this.dgvHangHoa);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -323,7 +368,11 @@
             this.pnlHangHoa.ResumeLayout(false);
             this.pnlHangHoa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -353,5 +402,9 @@
         private System.Windows.Forms.Panel pnlHangHoa;
         private System.Windows.Forms.MonthCalendar Calendar;
         private System.Windows.Forms.DataGridView dgvHangHoa;
+        private System.Windows.Forms.Label lbltitle;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }
