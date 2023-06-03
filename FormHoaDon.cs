@@ -62,7 +62,7 @@ namespace ADO_NET
         private void dgvHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvHoaDon.CurrentCell.RowIndex;
-            if (click_cell)
+            if (click_cell && r < dgvAmThuc.RowCount - 1)
             {
                 txtID.Text = dgvHoaDon.Rows[r].Cells[0].Value.ToString();
                 txtDanhMuc.Text = dgvHoaDon.Rows[r].Cells[3].Value.ToString();

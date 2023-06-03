@@ -24,7 +24,7 @@ namespace ADO_NET
     {
         ChucNang chucnang = ChucNang.None;
         BL_KhachHang bl = new BL_KhachHang();
-        bool click_cell = false;
+        bool click_cell = true;
         public FormKhachHang()
         {
             InitializeComponent();
@@ -144,6 +144,7 @@ namespace ADO_NET
                     MessageBox.Show("Không lấy được nội dung!");
                 }
             }
+            click_cell = true;
         }
 
         private void btnsua_Click(object sender, EventArgs e)

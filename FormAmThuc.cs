@@ -76,7 +76,7 @@ namespace ADO_NET
         private void dgvAmThuc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvAmThuc.CurrentCell.RowIndex;
-            if (click_cell)
+            if (click_cell && r < dgvAmThuc.RowCount - 1)
             {
                 txtID.Text = dgvAmThuc.Rows[r].Cells[0].Value.ToString();
                 txtTen.Text = dgvAmThuc.Rows[r].Cells[1].Value.ToString();

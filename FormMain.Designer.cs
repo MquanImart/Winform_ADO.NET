@@ -244,6 +244,7 @@
             this.Controls.Add(this.lbltitle);
             this.Name = "FormMain";
             this.Text = "FormMain";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.pnllogin.ResumeLayout(false);
             this.pnllogin.PerformLayout();
             this.pnlchucnang.ResumeLayout(false);

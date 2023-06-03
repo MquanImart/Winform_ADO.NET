@@ -85,5 +85,10 @@ namespace ADO_NET
             }
 
         }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

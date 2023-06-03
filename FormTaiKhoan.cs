@@ -145,11 +145,14 @@ namespace ADO_NET
         private void dgvTK_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvTK.CurrentCell.RowIndex;
-            txtUser.Text = dgvTK.Rows[r].Cells[0].Value.ToString();
-            txtPass.Text = dgvTK.Rows[r].Cells[1].Value.ToString();
-            txtID.Text = dgvTK.Rows[r].Cells[2].Value.ToString();
-            txtMoney.Text = dgvTK.Rows[r].Cells[3].Value.ToString();
-            txtshowpass.ResetText();
+            if (r < dgvTK.RowCount - 1)
+            {
+                txtUser.Text = dgvTK.Rows[r].Cells[0].Value.ToString();
+                txtPass.Text = dgvTK.Rows[r].Cells[1].Value.ToString();
+                txtID.Text = dgvTK.Rows[r].Cells[2].Value.ToString();
+                txtMoney.Text = dgvTK.Rows[r].Cells[3].Value.ToString();
+                txtshowpass.ResetText();
+            }   
         }
 
         private void btnshowpass_Click(object sender, EventArgs e)

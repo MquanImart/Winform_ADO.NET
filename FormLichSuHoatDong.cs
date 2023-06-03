@@ -95,6 +95,7 @@ namespace ADO_NET
         {
             chucnang = ChucNang.Them;
             changState(true);
+            ClickCell = false;
         }
 
         private void btnsua_Click(object sender, EventArgs e)
@@ -195,9 +196,9 @@ namespace ADO_NET
 
         private void dgvLSHD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (ClickCell == true)
+            int r = dgvLSHD.CurrentCell.RowIndex;
+            if (ClickCell == true && r < dgvLSHD.RowCount - 1)
             {
-                int r = dgvLSHD.CurrentCell.RowIndex;
                 Calendar.SelectionStart = Convert.ToDateTime(dgvLSHD.Rows[r].Cells[0].Value);
                 TimeSpan gio = (TimeSpan)dgvLSHD.Rows[r].Cells[1].Value;
                 numGio.Value = gio.Hours;
