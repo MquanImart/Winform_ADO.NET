@@ -224,5 +224,11 @@ namespace ADO_NET
             }
             MessageBox.Show("Tong thoi gian su dung la: " + tong.ToString());
         }
+
+        private void btnreport_Click(object sender, EventArgs e)
+        {
+            FormReportLichSuTruyCap formReportLichSuTruyCap = new FormReportLichSuTruyCap();
+            formReportLichSuTruyCap.ShowDialog();
+        }
     }
 }

@@ -297,5 +297,11 @@ namespace ADO_NET
             }
             MessageBox.Show("Lợi nhuận là: " + loiNhuan.ToString());
         }
+
+        private void btnreport_Click(object sender, EventArgs e)
+        {
+            FormThuChi f = new FormThuChi();
+            f.ShowDialog();
+        }
     }
 }

@@ -62,6 +62,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbltitle = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnreport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLSHD)).BeginInit();
             this.pnllshd.SuspendLayout();
             this.pnlthuoctinh.SuspendLayout();
@@ -413,6 +414,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnreport);
             this.panel3.Controls.Add(this.btnTinhTong);
             this.panel3.Controls.Add(this.btnTinhThoiGian);
             this.panel3.Location = new System.Drawing.Point(875, 353);
@@ -426,7 +428,7 @@
             this.lbltitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltitle.Location = new System.Drawing.Point(288, 30);
             this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(454, 39);
+            this.lbltitle.Size = new System.Drawing.Size(438, 38);
             this.lbltitle.TabIndex = 68;
             this.lbltitle.Text = "Quản lý Lịch Sử Hoạt Động";
             // 
@@ -440,6 +442,16 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(118, 272);
             this.panel4.TabIndex = 69;
+            // 
+            // btnreport
+            // 
+            this.btnreport.Location = new System.Drawing.Point(11, 157);
+            this.btnreport.Name = "btnreport";
+            this.btnreport.Size = new System.Drawing.Size(97, 55);
+            this.btnreport.TabIndex = 70;
+            this.btnreport.Text = "Report";
+            this.btnreport.UseVisualStyleBackColor = true;
+            this.btnreport.Click += new System.EventHandler(this.btnreport_Click);
             // 
             // FormLichSuHoatDong
             // 
@@ -509,5 +521,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbltitle;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnreport;
     }
 }

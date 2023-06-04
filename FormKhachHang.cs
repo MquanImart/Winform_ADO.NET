@@ -202,5 +202,11 @@ namespace ADO_NET
         {
             MessageBox.Show((dgvKH.RowCount - 1).ToString());
         }
+
+        private void btnreport_Click(object sender, EventArgs e)
+        {
+            FormReportKhachHang f = new FormReportKhachHang();
+            f.ShowDialog();
+        }
     }
 }

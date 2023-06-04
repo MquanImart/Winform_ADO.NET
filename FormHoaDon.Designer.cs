@@ -59,6 +59,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnreport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSec)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHour)).BeginInit();
@@ -72,7 +73,7 @@
             // txtTien
             // 
             this.txtTien.Location = new System.Drawing.Point(91, 136);
-            this.txtTien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTien.Margin = new System.Windows.Forms.Padding(4);
             this.txtTien.Name = "txtTien";
             this.txtTien.Size = new System.Drawing.Size(173, 22);
             this.txtTien.TabIndex = 41;
@@ -144,7 +145,7 @@
             // numericUpDownSec
             // 
             this.numericUpDownSec.Location = new System.Drawing.Point(223, 211);
-            this.numericUpDownSec.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownSec.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownSec.Name = "numericUpDownSec";
             this.numericUpDownSec.Size = new System.Drawing.Size(45, 22);
             this.numericUpDownSec.TabIndex = 30;
@@ -152,7 +153,7 @@
             // numericUpDownMinute
             // 
             this.numericUpDownMinute.Location = new System.Drawing.Point(157, 211);
-            this.numericUpDownMinute.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownMinute.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownMinute.Name = "numericUpDownMinute";
             this.numericUpDownMinute.Size = new System.Drawing.Size(45, 22);
             this.numericUpDownMinute.TabIndex = 29;
@@ -160,7 +161,7 @@
             // numericUpDownHour
             // 
             this.numericUpDownHour.Location = new System.Drawing.Point(91, 211);
-            this.numericUpDownHour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownHour.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownHour.Name = "numericUpDownHour";
             this.numericUpDownHour.Size = new System.Drawing.Size(45, 22);
             this.numericUpDownHour.TabIndex = 28;
@@ -194,7 +195,7 @@
             // txtDanhMuc
             // 
             this.txtDanhMuc.Location = new System.Drawing.Point(91, 97);
-            this.txtDanhMuc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDanhMuc.Margin = new System.Windows.Forms.Padding(4);
             this.txtDanhMuc.Name = "txtDanhMuc";
             this.txtDanhMuc.Size = new System.Drawing.Size(173, 22);
             this.txtDanhMuc.TabIndex = 24;
@@ -202,7 +203,7 @@
             // txtLoai
             // 
             this.txtLoai.Location = new System.Drawing.Point(91, 57);
-            this.txtLoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLoai.Margin = new System.Windows.Forms.Padding(4);
             this.txtLoai.Name = "txtLoai";
             this.txtLoai.Size = new System.Drawing.Size(173, 22);
             this.txtLoai.TabIndex = 22;
@@ -219,7 +220,7 @@
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(91, 17);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(173, 22);
             this.txtID.TabIndex = 20;
@@ -252,7 +253,7 @@
             this.pnlHoaDon.Controls.Add(this.txtID);
             this.pnlHoaDon.Controls.Add(this.lbid);
             this.pnlHoaDon.Location = new System.Drawing.Point(175, 329);
-            this.pnlHoaDon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlHoaDon.Margin = new System.Windows.Forms.Padding(4);
             this.pnlHoaDon.Name = "pnlHoaDon";
             this.pnlHoaDon.Size = new System.Drawing.Size(708, 273);
             this.pnlHoaDon.TabIndex = 63;
@@ -336,7 +337,7 @@
             // 
             this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDon.Location = new System.Drawing.Point(42, 89);
-            this.dgvHoaDon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvHoaDon.Margin = new System.Windows.Forms.Padding(4);
             this.dgvHoaDon.Name = "dgvHoaDon";
             this.dgvHoaDon.RowHeadersWidth = 51;
             this.dgvHoaDon.Size = new System.Drawing.Size(841, 222);
@@ -349,7 +350,7 @@
             this.lbltitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltitle.Location = new System.Drawing.Point(405, 26);
             this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(304, 39);
+            this.lbltitle.Size = new System.Drawing.Size(294, 38);
             this.lbltitle.TabIndex = 67;
             this.lbltitle.Text = "Quản Lý Hóa Đơn";
             // 
@@ -368,6 +369,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnreport);
             this.panel2.Controls.Add(this.btnTongChi);
             this.panel2.Controls.Add(this.btnTongThu);
             this.panel2.Controls.Add(this.btnLoi);
@@ -386,6 +388,16 @@
             this.panel3.Size = new System.Drawing.Size(147, 222);
             this.panel3.TabIndex = 70;
             // 
+            // btnreport
+            // 
+            this.btnreport.Location = new System.Drawing.Point(14, 157);
+            this.btnreport.Name = "btnreport";
+            this.btnreport.Size = new System.Drawing.Size(113, 55);
+            this.btnreport.TabIndex = 71;
+            this.btnreport.Text = "Report";
+            this.btnreport.UseVisualStyleBackColor = true;
+            this.btnreport.Click += new System.EventHandler(this.btnreport_Click);
+            // 
             // FormHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -397,7 +409,7 @@
             this.Controls.Add(this.lbltitle);
             this.Controls.Add(this.pnlHoaDon);
             this.Controls.Add(this.dgvHoaDon);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormHoaDon";
             this.Text = "FormHoaDon";
             this.Load += new System.EventHandler(this.FormHoaDon_Load);
@@ -448,5 +460,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnreport;
     }
 }

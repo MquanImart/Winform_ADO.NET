@@ -51,6 +51,7 @@
             this.lbltitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnreport = new System.Windows.Forms.Button();
             this.pnlnv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
             this.panel1.SuspendLayout();
@@ -256,7 +257,7 @@
             this.lbltitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltitle.Location = new System.Drawing.Point(352, 33);
             this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(360, 39);
+            this.lbltitle.Size = new System.Drawing.Size(348, 38);
             this.lbltitle.TabIndex = 65;
             this.lbltitle.Text = "Quản Lý Khách Hàng";
             // 
@@ -283,11 +284,22 @@
             this.panel2.Size = new System.Drawing.Size(119, 222);
             this.panel2.TabIndex = 67;
             // 
+            // btnreport
+            // 
+            this.btnreport.Location = new System.Drawing.Point(867, 328);
+            this.btnreport.Name = "btnreport";
+            this.btnreport.Size = new System.Drawing.Size(91, 55);
+            this.btnreport.TabIndex = 71;
+            this.btnreport.Text = "Report";
+            this.btnreport.UseVisualStyleBackColor = true;
+            this.btnreport.Click += new System.EventHandler(this.btnreport_Click);
+            // 
             // FormKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1023, 532);
+            this.ClientSize = new System.Drawing.Size(1031, 534);
+            this.Controls.Add(this.btnreport);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbltitle);
@@ -332,6 +344,7 @@
         private System.Windows.Forms.Label lbltitle;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnreport;
     }
 }
 
